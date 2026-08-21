@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Homease · Your home, handled.</title>
-<meta name="description" content="Your home's standards, quietly carried through, without making you manage every message.">
+<title>Homease · Your Home, Quietly Handled</title>
+<meta name="description" content="A private household routine service for clear instructions, calm oversight, and Shabbos-aware coordination.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -14,50 +14,51 @@
     --clay:#B96C5C; --soft:#8d897f; --line:#ECE8DE; --r:20px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{background:var(--ivory);color:var(--ink);
     font:16px/1.6 "Inter",-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
   .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
   .wrap{max-width:980px;margin:0 auto;padding:0 24px}
   a{color:var(--sage)}
 
-  header{padding:26px 0}
+  nav.top{display:flex;align-items:center;gap:22px;padding:22px 0}
   .brand{display:flex;align-items:center;gap:10px}
-  .brand svg{width:30px;height:30px}
-  .brand .word{font-size:20px}
+  .brand svg{width:28px;height:28px}
+  .brand .word{font-size:19px}
+  nav.top .links{margin-left:auto;display:flex;gap:20px;align-items:center;font-size:14px}
+  nav.top .links a{color:var(--soft);text-decoration:none}
+  nav.top .links a:hover{color:var(--ink)}
+  .cta{display:inline-block;background:var(--sage);color:var(--white) !important;
+    text-decoration:none;font:500 14.5px "Inter",sans-serif;padding:12px 24px;border-radius:999px}
+  .cta.ghost{background:var(--sand);color:var(--ink) !important}
+  @media(max-width:760px){nav.top .links a.hidenav{display:none}}
 
-  .hero{text-align:center;padding:52px 0 60px}
-  .hero h1{font-size:56px;line-height:1.08}
-  .hero .money{margin-top:18px;font-size:20px;color:var(--soft)}
-  .hero .money b{color:var(--sage);font-weight:500}
-  .cta{display:inline-block;margin-top:30px;background:var(--sage);color:var(--white);
-    text-decoration:none;font:500 15px "Inter",sans-serif;padding:14px 28px;border-radius:999px}
-  .cta.ghost{background:var(--sand);color:var(--ink);margin-left:10px}
-  .subtle{margin-top:14px;font-size:13px;color:var(--soft)}
+  .hero{text-align:center;padding:54px 0 58px}
+  .hero h1{font-size:54px;line-height:1.08}
+  .hero p{margin:20px auto 0;max-width:640px;color:var(--soft);font-size:17.5px}
+  .hero .ctas{margin-top:28px}
+  .hero .ctas .cta{margin:0 6px}
+  .trust{margin-top:18px;font-size:13px;color:var(--soft);letter-spacing:.02em}
+  .trust b{color:var(--sage);font-weight:500}
 
-  section{padding:44px 0;border-top:1px solid var(--line)}
-  h2{font-size:32px;margin-bottom:10px}
-  .lead{color:var(--soft);max-width:640px;margin-bottom:26px}
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  h2{font-size:31px;margin-bottom:10px}
+  .lead{color:var(--soft);max-width:660px}
+  h3.sub{font-size:20px;margin:26px 0 6px}
+  .sub + p{color:var(--soft);font-size:15px;max-width:640px}
 
-  .problem{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:760px){.problem{grid-template-columns:1fr}.hero h1{font-size:40px}}
-  .pcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-  .pcard h3{font-size:19px;margin-bottom:8px}
-  .pcard.before h3{color:var(--clay)}
-  .pcard.after h3{color:var(--sage)}
-  .pcard p{font-size:14.5px;color:var(--soft)}
-
-  .pipe{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px}
-  .stage{flex:1;min-width:150px;background:var(--white);border:1px solid var(--line);
-    border-radius:14px;padding:14px}
-  .stage .t{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600}
-  .stage .d{font-size:12.5px;color:var(--soft);margin-top:5px;line-height:1.45}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}.hero h1{font-size:38px}}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+  .card h3{font-size:20px}
+  .card p{font-size:14.5px;color:var(--soft);margin:8px 0 14px}
 
   .moment{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
-    padding:26px;margin-bottom:18px;display:grid;grid-template-columns:1fr 1.1fr;gap:26px;align-items:start}
+    padding:26px;margin-top:18px;display:grid;grid-template-columns:1fr 1.1fr;gap:26px;align-items:start}
   @media(max-width:760px){.moment{grid-template-columns:1fr}}
-  .moment h3{font-size:22px;margin-bottom:8px}
+  .moment h3{font-size:21px;margin-bottom:8px}
   .moment p{font-size:14.5px;color:var(--soft)}
-  .moment .see{display:inline-block;margin-top:14px;font-size:14px}
+  .moment .see{display:inline-block;margin-top:12px;font-size:14px}
   .msg{background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
     font:13px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;color:var(--ink)}
   .chipdemo{display:inline-block;font-size:13px;border-radius:999px;padding:7px 16px;margin:4px 0}
@@ -65,29 +66,35 @@
   .chipdemo.held{background:#F0E0DC;color:#7c4438}
   .chipdemo.ok{background:var(--pale-sage);color:#4c6455}
 
-  .dash{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:760px){.dash{grid-template-columns:1fr}}
-  .dcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-  .dcard h3{font-size:20px}
-  .dcard p{font-size:14px;color:var(--soft);margin:8px 0 14px}
+  .principles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:22px}
+  @media(max-width:760px){.principles{grid-template-columns:1fr}}
+  .principle{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+  .principle h3{font-size:17px;margin-bottom:8px}
+  .principle p{font-size:14px;color:var(--soft)}
 
-  ul.behind{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px}
-  @media(max-width:760px){ul.behind{grid-template-columns:1fr}}
-  ul.behind li{background:var(--white);border:1px solid var(--line);border-radius:14px;
-    padding:14px 16px;font-size:14px}
-  ul.behind b{font-weight:600}
+  .pilot{background:var(--pale-sage);border-radius:var(--r);padding:42px;text-align:center;margin-top:8px}
+  .pilot h2{margin-bottom:10px}
+  .pilot p{color:#4c6455;max-width:600px;margin:0 auto}
+  .pilot .support{font-size:13px;margin-top:14px;color:#5d7364}
 
-  .pilot{background:var(--pale-sage);border-radius:var(--r);padding:40px;text-align:center;margin:10px 0 20px}
-  .pilot h2{margin-bottom:8px}
-  .pilot p{color:#4c6455;max-width:560px;margin:0 auto}
+  details{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;margin-top:10px}
+  details summary{font-weight:500;font-size:15px;cursor:pointer}
+  details p{margin-top:10px;font-size:14.5px;color:var(--soft)}
 
-  footer{padding:28px 0 40px;color:var(--soft);font-size:12.5px;text-align:center}
+  .final{text-align:center;padding:60px 0 30px}
+  .final h2{font-size:34px}
+  .final .cta{margin-top:24px}
+  .final .privacy{margin-top:14px;font-size:12.5px;color:var(--soft)}
+
+  footer{padding:26px 0 40px;color:var(--soft);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 
 <div class="wrap">
-<header>
+
+<nav class="top">
   <div class="brand">
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="48" height="48" rx="12" fill="#789081"/>
@@ -96,132 +103,170 @@
     </svg>
     <span class="word serif"><b>Homease</b></span>
   </div>
-</header>
+  <div class="links">
+    <a class="hidenav" href="#how">How it works</a>
+    <a class="hidenav" href="#principles">Principles</a>
+    <a class="hidenav" href="#pilot">Private pilot</a>
+    <a class="cta" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20private%20walkthrough">Request a private walkthrough</a>
+  </div>
+</nav>
 
 <div class="hero">
-  <h1 class="serif">Your home, handled.</h1>
-  <div class="money">Your home's standards, quietly carried through.<br><b>"Your home is on track. One decision needs you."</b></div>
-  <div>
-    <a class="cta" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20—%20private%20walkthrough">Book a private walkthrough</a>
-    <a class="cta ghost" href="command-center.html">See the live demo</a>
+  <h1 class="serif">Your home's standards,<br>quietly carried through.</h1>
+  <p>Homease helps staffed, Shabbos-observant homes run their daily routines without constant reminders. Each person receives clear instructions. Exceptions reach the right person. You receive one calm view of what needs you, and nothing more.</p>
+  <div class="ctas">
+    <a class="cta" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20private%20walkthrough">Request a private walkthrough</a>
+    <a class="cta ghost" href="#demo">See the fictional demo</a>
   </div>
-  <div class="subtle">A private pilot for staffed, observant homes. Every screen below is generated by the real engine on a fictional household.</div>
+  <div class="trust"><b>Private by design</b> · <b>Shabbos-aware</b> · <b>Built around worker dignity</b></div>
 </div>
 
 <section>
-  <h2 class="serif">The problem is not the staff. It is the forty messages.</h2>
-  <div class="lead">In a staffed home, the standards live in one person's memory and travel by WhatsApp: the same instructions retyped, the same follow-ups repeated, the important question buried between confirmations.</div>
-  <div class="problem">
-    <div class="pcard before">
-      <h3>Before</h3>
-      <p>Forty scattered messages a day. Instructions retyped from memory. "Did she see it?" Follow-ups as a way of life. When the one person who knows the house is away, the house does not know itself.</p>
-    </div>
-    <div class="pcard after">
-      <h3>With Homease</h3>
-      <p>Each worker receives her routine, in her own language, at her hour. Confirmations come back as four governed words. You receive one calm evening digest, and only true exceptions reach you during the day.</p>
-    </div>
+  <h2 class="serif">A beautifully run home should not require forty messages.</h2>
+  <div class="lead">
+    The standards are known. The people are capable. But the details are scattered across memory, WhatsApp threads, meal notes, and repeated follow-up. When someone is absent or something is missing, the owner becomes the routing system.
+    <br><br>Homease gives those routines a calm, dependable structure.
   </div>
 </section>
 
-<section>
-  <h2 class="serif">How a day runs</h2>
-  <div class="pipe">
-    <div class="stage"><div class="t">Standard</div><div class="d">The routine, set once, in the household's own words</div></div>
-    <div class="stage"><div class="t">Assignment</div><div class="d">The right person, the right day. A job-share resolves itself</div></div>
-    <div class="stage"><div class="t">Confirmation</div><div class="d">LISTO · FALTA · PREGUNTA · NO PUEDO</div></div>
-    <div class="stage"><div class="t">Accountability</div><div class="d">One evening digest: what ran, what needs you</div></div>
-    <div class="stage"><div class="t">Insight</div><div class="d">Patterns across the weeks, not surveillance</div></div>
-  </div>
+<section id="how">
+  <h2 class="serif">How it works</h2>
+
+  <h3 class="sub serif">Your household teaches us how the home works</h3>
+  <p>We begin with your routines, roles, languages, timing, religious boundaries, and exceptions. Homease adapts to the household; the household does not have to adapt to generic software.</p>
+
+  <h3 class="sub serif">The right instruction reaches the right person</h3>
+  <p>Each worker receives a clear daily instruction in her own language. Replies stay simple: done, missing, question, or unable. Routine confirmations remain quiet; genuine exceptions are routed for attention.</p>
+
+  <h3 class="sub serif">You see what needs you</h3>
+  <p>Instead of watching every task, you receive one calm daily view: what is on track, what changed, and the few decisions that genuinely need you.</p>
 </section>
 
-<section>
-  <h2 class="serif">Three moments that decide whether a system is real</h2>
-  <div class="lead">Not the happy path. The moments every staffed home knows.</div>
-
-  <div class="moment">
-    <div>
-      <h3 class="serif">"Falta velas": something ran out</h3>
-      <p>A worker replies FALTA and the item, mid-routine, in two words. It lands quietly on the shopping list, consolidated for one order. No follow-up thread, no forgotten candle crisis on Friday afternoon.</p>
-      <a class="see" href="command-center.html">See it on the Command Center →</a>
-    </div>
-    <div class="msg">Worker · 10:42
-FALTA velas
-
-Command Center · Running low
-[ velas ]  — gathered quietly from the day's replies.</div>
-  </div>
-
-  <div class="moment">
-    <div>
-      <h3 class="serif">A worker cannot come</h3>
-      <p>The engine computes what the day actually loses and hands the house manager one message, answerable with one number. The record speaks about the work, never a worker's attendance file.</p>
-    </div>
-    <div class="msg">Coverage decision · Thursday
-
-Daily kitchen routine (08:30) has no one to run it today.
-
-Reply with one number:
-1 COVER — no one else holds this role
-2 REDUCE — essentials only today
-3 POSTPONE — it runs again Friday
-4 REASSIGN — hand it to someone on duty: Carla or Rosa</div>
-  </div>
-
-  <div class="moment">
-    <div>
-      <h3 class="serif">Shabbos timing cannot be verified</h3>
-      <p>If candle-lighting times cannot be established, Homease does not guess. It fails dark: the message is held, and the dashboard says so. A missed routine is an inconvenience. A phone buzzing in the kitchen on Shabbos is a broken promise.</p>
-      <a class="see" href="command-center-friday.html">See a Friday on the Command Center →</a>
-    </div>
-    <div>
-      <div class="chipdemo ok">Send windows clear today</div><br>
-      <div class="chipdemo prec">Precautionary mode — engine holds anything near candle-lighting</div><br>
-      <div class="chipdemo held">Quiet now — messages held for Shabbos</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="serif">Two views of the same quiet day</h2>
-  <div class="dash">
-    <div class="dcard">
-      <h3 class="serif">The Command Center</h3>
-      <p>The whole household on one screen: today's timeline, who is on duty, the featured routine's progress, what needs you, and the Shabbos posture. Every number computed, nothing invented.</p>
+<section id="demo">
+  <h2 class="serif">Meet the Stern household</h2>
+  <div class="lead">The public demonstration uses a completely fictional household and invented staff. The routines are fictional; the operating principles and product engine are real.</div>
+  <div class="cards">
+    <div class="card">
+      <h3 class="serif">See the Command Center</h3>
+      <p>The household's daily rhythm, people on duty, open exceptions, and send posture in one view.</p>
       <a class="cta ghost" href="command-center.html">Open the Command Center</a>
     </div>
-    <div class="dcard">
-      <h3 class="serif">Today, on your phone</h3>
-      <p>One calm status, the few decisions that need you, and the people of your home: presence and state, never scores. The manager's work queue sits one toggle away.</p>
+    <div class="card">
+      <h3 class="serif">See Today</h3>
+      <p>The owner's quieter mobile view: one status, the day's timeline, and only the decisions that require attention.</p>
       <a class="cta ghost" href="today.html">Open Today</a>
     </div>
   </div>
 </section>
 
 <section>
-  <h2 class="serif">Behind the scenes</h2>
-  <ul class="behind">
-    <li><b>Four governed words.</b> LISTO, FALTA, PREGUNTA, NO PUEDO are matched by rule, instantly. Anything else waits for a human, and a model outage degrades nothing that matters.</li>
-    <li><b>Fails dark.</b> Religious boundaries are enforced by the engine, not by the operator remembering.</li>
-    <li><b>Worker dignity by design.</b> People rows show presence and state. There are no scores, no percentages, no attendance file.</li>
-    <li><b>An append-only record.</b> Every send, reply, and decision is appended, never edited. State is derived, auditable, calm.</li>
-    <li><b>Bilingual by design.</b> The owner's English above the worker's Spanish, the house's own vocabulary preserved.</li>
-    <li><b>Channel-agnostic.</b> It runs today over the channels your home already uses. No new app for your staff to learn.</li>
-  </ul>
-</section>
+  <h2 class="serif">Three moments that matter</h2>
 
-<section>
-  <div class="pilot">
-    <h2 class="serif">A private household pilot</h2>
-    <p>Four weeks, personally operated. Your routines encoded in your own words, instructions delivered through the channels your home already uses, a daily owner digest, and a weekly refinement session. Quiet, private, and measured by one thing: whether your home feels calmer.</p>
-    <a class="cta" style="margin-top:22px" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20—%20private%20pilot">Apply for a private pilot</a>
+  <div class="moment">
+    <div>
+      <h3 class="serif">Something is missing</h3>
+      <p>A worker replies that candles are missing. The routine does not disappear into a chat thread; the exception reaches the person who can resolve it.</p>
+      <a class="see" href="command-center.html">See it on the Command Center →</a>
+    </div>
+    <div class="msg">Worker · 10:42
+FALTA velas
+
+Command Center · Running low
+[ velas ]  gathered quietly from the day's replies</div>
+  </div>
+
+  <div class="moment">
+    <div>
+      <h3 class="serif">Someone cannot come</h3>
+      <p>Homease asks the household manager for one decision: cover, reduce, postpone, or reassign. The system records the routine outcome, not an attendance score.</p>
+    </div>
+    <div class="msg">Coverage decision · Thursday
+
+Daily kitchen routine (08:30) has no one to run it today.
+
+Reply with one number:
+1 COVER
+2 REDUCE, essentials only today
+3 POSTPONE, it runs again Friday
+4 REASSIGN, hand it to someone on duty: Carla or Rosa</div>
+  </div>
+
+  <div class="moment">
+    <div>
+      <h3 class="serif">Shabbos timing is uncertain</h3>
+      <p>If the system cannot establish a safe send window, it holds the message. A missed reminder is inconvenient. Crossing a religious boundary is a broken promise.</p>
+      <a class="see" href="command-center-friday.html">See a Friday on the Command Center →</a>
+    </div>
+    <div>
+      <div class="chipdemo ok">Send windows clear today</div><br>
+      <div class="chipdemo prec">Precautionary mode: engine holds anything near candle-lighting</div><br>
+      <div class="chipdemo held">Quiet now: messages held for Shabbos</div>
+    </div>
   </div>
 </section>
 
-<footer>
-  Homease · All names, routines, and data on these demo screens are fictional.<br>
-  Real households run privately; a household's data never leaves its own pilot.
-</footer>
+<section id="principles">
+  <h2 class="serif">Principles</h2>
+  <div class="principles">
+    <div class="principle">
+      <h3 class="serif">Religious boundaries are operational requirements</h3>
+      <p>Shabbos awareness is not a calendar decoration. It determines whether and when the system may act.</p>
+    </div>
+    <div class="principle">
+      <h3 class="serif">Workers deserve clarity, not surveillance</h3>
+      <p>Homease assigns work by role, communicates respectfully, and shows presence and work state without rankings or performance scores.</p>
+    </div>
+    <div class="principle">
+      <h3 class="serif">Private household knowledge stays private</h3>
+      <p>Every household is configured separately. Public demonstrations use invented data, never a family's routines or names.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pilot">
+  <div class="pilot">
+    <h2 class="serif">Begin with one household and four weeks</h2>
+    <p>We will learn your household's operating rhythm, configure up to twelve recurring routines, and refine the experience with you each week. The founding pilot is deliberately personal: we are proving what creates calm before making the service broadly available.</p>
+    <a class="cta" style="margin-top:24px" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20founding%20pilot">Ask about a founding pilot</a>
+    <div class="support">A private conversation. No obligation and no household data required on the first call.</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="serif">Questions households ask</h2>
+  <details>
+    <summary>Is this an employee-monitoring system?</summary>
+    <p>No. Homease is built to clarify work and route exceptions, not to score or rank people. It reports whether a household routine was handled, not a worker's performance percentage.</p>
+  </details>
+  <details>
+    <summary>Do we need to change how our staff communicates?</summary>
+    <p>The founding pilot is designed around the household's existing communication habits. We begin with what already works and reduce unnecessary complexity.</p>
+  </details>
+  <details>
+    <summary>Is WhatsApp automation required?</summary>
+    <p>No. The pilot can be operated as a private concierge service while the product learns the household's real needs.</p>
+  </details>
+  <details>
+    <summary>Will our household appear in the demo?</summary>
+    <p>Never. The public demonstration uses a fictional household and invented data.</p>
+  </details>
+  <details>
+    <summary>Is this available to every household?</summary>
+    <p>The first pilots are limited to staffed, Shabbos-observant households so that the service can remain personal and carefully supported.</p>
+  </details>
+</section>
+
+<div class="final">
+  <h2 class="serif">Your home can feel held<br>without you holding every detail.</h2>
+  <a class="cta" href="mailto:amichai.cohen@livekabbalah.com?subject=Homease%20private%20walkthrough">Request a private walkthrough</a>
+  <div class="privacy">We will use your details only to respond to your request.</div>
 </div>
 
+<footer>
+  Homease · All names, routines, and data on these demonstration screens are fictional.<br>
+  Real households run privately; a household's data never leaves its own pilot.
+</footer>
+
+</div>
 </body>
 </html>
