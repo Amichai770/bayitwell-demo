@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homease Command Center — Friday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:#F7F5EF; --white:#FFFFFF; --ink:#252824; --sage:#789081;
+    --pale-sage:#E5ECE6; --blue:#7E9299; --sand:#E8E0D3; --amber:#C99555;
+    --clay:#B96C5C; --soft:#8d897f; --line:#ECE8DE; --r:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory); color:var(--ink);
+    font:15px/1.55 "Inter",-apple-system,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased; padding:34px 40px 26px}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+  .wall{max-width:1500px;margin:0 auto}
+
+  header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  header svg{width:34px;height:34px}
+  .wordmark{font-size:22px}
+  .cc{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-top:2px}
+  .headright{margin-left:auto;text-align:right}
+  .date{color:var(--soft);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+
+  .hero{text-align:center;margin:18px 0 26px}
+  .hero h1{font-size:44px;line-height:1.1;font-weight:400}
+  .hero .sub{margin-top:6px;font-size:17px;color:var(--amber)}
+  .chip{display:inline-block;margin-top:12px;font-size:13px;border-radius:999px;padding:7px 16px}
+  .chip.ok{background:var(--pale-sage);color:#4c6455}
+  .chip.prec{background:#F3E8D8;color:#8a6531}
+  .chip.held{background:#F0E0DC;color:#7c4438}
+
+  .grid{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:16px}
+  @media(max-width:1080px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:20px 22px;margin-bottom:16px}
+  .card h2{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);
+    font-weight:600;margin-bottom:14px}
+
+  .tlrow{display:flex;gap:13px;align-items:baseline;padding:10px 0}
+  .tlrow + .tlrow{border-top:1px solid var(--line)}
+  .tltime{font-size:13px;color:var(--soft);width:46px;flex:none;font-variant-numeric:tabular-nums}
+  .tllabel{font-size:15px;flex:1}
+  .tlwho{color:var(--soft);font-size:12.5px}
+  .tlstate{font-size:12.5px;white-space:nowrap}
+  .tlstate.done{color:var(--sage)} .tlstate.progress{color:var(--blue)}
+  .tlstate.open{color:var(--soft)} .tlstate.attention{color:var(--amber)}
+  .tlstate.held{color:var(--clay)}
+  .heldnote{font-size:12.5px;color:var(--clay);margin-left:59px}
+
+  .person{display:flex;align-items:center;gap:13px;padding:10px 0}
+  .person + .person{border-top:1px solid var(--line)}
+  .avatar{width:40px;height:40px;border-radius:50%;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;flex:none}
+  .pname{font-weight:500;font-size:15px}
+  .pline{color:var(--soft);font-size:13px}
+  .phours{margin-left:auto;color:var(--soft);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+  .statuscard{background:var(--pale-sage);border-color:transparent;text-align:center}
+  .statuscard .big{font-size:24px}
+  .counts{display:flex;justify-content:center;gap:26px;margin-top:12px;color:var(--soft);font-size:13.5px}
+  .counts b{color:var(--ink);font-weight:600;font-size:16px}
+
+  .flowname{font-size:21px;text-align:center;margin-bottom:4px}
+  .flowmeta{text-align:center;color:var(--soft);font-size:12.5px;margin-bottom:18px}
+  .flow{display:flex;align-items:flex-start;justify-content:center;gap:0;flex-wrap:wrap}
+  .step{display:flex;flex-direction:column;align-items:center;width:96px;text-align:center}
+  .stepdot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--line);background:var(--white);font-size:17px}
+  .step.done .stepdot{background:var(--pale-sage);border-color:var(--sage);color:var(--sage)}
+  .step.attention .stepdot{background:#F7EBDB;border-color:var(--amber);color:var(--amber)}
+  .steplabel{font-size:11.5px;color:var(--soft);margin-top:7px;line-height:1.3}
+  .step.done .steplabel{color:#4c6455}
+  .conn{height:2px;background:var(--line);flex:none;width:26px;margin-top:21px}
+  .conn.done{background:var(--sage)}
+
+  .pill{display:inline-block;background:var(--pale-sage);border-radius:999px;
+    padding:5px 13px;margin:3px 5px 3px 0;font-size:13.5px}
+  .need{display:flex;align-items:center;gap:12px;padding:10px 0}
+  .need + .need{border-top:1px solid var(--line)}
+  .need .txt{flex:1;font-size:14.5px}
+  .btn{border:0;background:var(--sage);color:var(--white);font:500 12.5px "Inter",sans-serif;
+    padding:8px 15px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .quiet{color:var(--soft);font-size:14px}
+
+  .lib{padding:10px 0}
+  .lib + .lib{border-top:1px solid var(--line)}
+  .librow{display:flex;align-items:baseline;gap:10px}
+  .libname{font-size:14.5px;flex:1}
+  .libwho{color:var(--soft);font-size:12px}
+  .days{display:flex;gap:4px;margin-top:6px}
+  .day{width:20px;height:20px;border-radius:50%;font-size:10px;display:flex;align-items:center;
+    justify-content:center;color:var(--soft);background:transparent;border:1px solid var(--line)}
+  .day.on{background:var(--sand);color:var(--ink);border-color:transparent}
+  .lib.today .day.on{background:var(--sage);color:var(--white)}
+  .todaytag{font-size:11px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase}
+
+  .dot{width:9px;height:9px;border-radius:50%;flex:none;align-self:center}
+  .dot.done{background:var(--sage)} .dot.attn{background:var(--amber)}
+  .dot.open{border:1.5px solid var(--soft)}
+
+  footer{margin-top:14px;border-top:1px solid var(--line);padding-top:18px}
+  .pipe{display:flex;justify-content:center;align-items:flex-start;gap:0;flex-wrap:wrap}
+  .stage{width:172px;text-align:center}
+  .stage .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+  .stage .d{font-size:12px;color:var(--soft);margin-top:4px;line-height:1.4}
+  .arrow{color:var(--sand);font-size:18px;margin:0 6px;line-height:1}
+  .foot{margin-top:16px;text-align:center;color:var(--soft);font-size:11.5px}
+</style>
+</head>
+<body>
+<div class="wall">
+
+<header>
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#789081"/>
+  <path d="M15 34 V22 C15 16 20 12 24 12 C28 12 33 16 33 22 V34" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  <path d="M15 26 H33" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
+  <div>
+    <div class="wordmark serif"><b>Homease</b></div>
+    <div class="cc">Command Center</div>
+  </div>
+  <div class="headright">
+    <div class="date">Friday · 2026-08-21</div>
+  </div>
+</header>
+
+<div class="hero">
+  <h1 class="serif">All done except one thing.</h1>
+  <div class="sub">Your home is nearly on track.</div>
+  <div><span class="chip prec">Precautionary mode — town unconfirmed, engine holds anything near candle-lighting</span></div>
+</div>
+
+<div class="grid">
+
+  <!-- ============ LEFT: today + people ============ -->
+  <div>
+    <div class="card">
+      <h2>Today</h2>
+      <div class="tlrow"><span class="tltime">08:00</span><span class="tllabel">Friday: Shabbos preparation <span class="tlwho">· Maria</span></span><span class="tlstate open">Scheduled</span></div><div class="tlrow"><span class="tltime">08:30</span><span class="tllabel">Daily kitchen routine <span class="tlwho">· Maria</span></span><span class="tlstate open">Scheduled</span></div>
+    </div>
+
+    <div class="card">
+      <h2>People · on duty today</h2>
+      <div class="person"><span class="avatar">M</span><span><div class="pname">Maria</div><div class="pline">Starting the day</div></span><span class="phours">08:30–16:30</span></div><div class="person"><span class="avatar">C</span><span><div class="pname">Carla</div><div class="pline">On duty today</div></span><span class="phours">08:30–16:30</span></div><div class="person"><span class="avatar">R</span><span><div class="pname">Rosa</div><div class="pline">On duty today</div></span><span class="phours">08:30–16:30</span></div>
+    </div>
+  </div>
+
+  <!-- ============ CENTER: pulse + featured flow ============ -->
+  <div>
+    <div class="card statuscard">
+      <div class="big serif">0 of 6 steps confirmed</div>
+      <div class="counts"><span><b>0</b> completed</span><span><b>6</b> in progress</span><span><b>0</b> need help</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Shabbos preparation</h2>
+      <div class="flowname serif">Friday: Shabbos preparation</div>
+      <div class="flowmeta">Maria · sent 08:00</div>
+      <div class="flow">
+        <span class="step open"><span class="stepdot"></span><span class="steplabel">Hot plate and urn</span></span><span class="conn"></span><span class="step open"><span class="stepdot"></span><span class="steplabel">The table</span></span><span class="conn"></span><span class="step open"><span class="stepdot"></span><span class="steplabel">Before leaving</span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Needs you</h2>
+      <div class="need"><span class="txt">6 of 6 sections not confirmed</span><button class="btn">Review</button></div>
+    </div>
+
+    
+  </div>
+
+  <!-- ============ RIGHT: routines + questions ============ -->
+  <div>
+    <div class="card">
+      <h2>Routines</h2>
+      <div class="lib">
+        <div class="librow"><span class="libname">Monday: kitchen and refrigerator reset</span><span class="libwho">08:30</span></div>
+        <div class="librow"><span class="libwho">Maria</span></div>
+        <div class="days"><span class="day">S</span><span class="day on">M</span><span class="day">T</span><span class="day">W</span><span class="day">T</span><span class="day">F</span><span class="day">S</span></div>
+      </div><div class="lib today">
+        <div class="librow"><span class="libname">Daily kitchen routine</span><span class="todaytag">Today</span></div>
+        <div class="librow"><span class="libwho">Maria</span></div>
+        <div class="days"><span class="day">S</span><span class="day on">M</span><span class="day on">T</span><span class="day on">W</span><span class="day on">T</span><span class="day on">F</span><span class="day">S</span></div>
+      </div><div class="lib">
+        <div class="librow"><span class="libname">Thursday: Shabbos preparation</span><span class="libwho">08:30</span></div>
+        <div class="librow"><span class="libwho">Maria</span></div>
+        <div class="days"><span class="day">S</span><span class="day">M</span><span class="day">T</span><span class="day">W</span><span class="day on">T</span><span class="day">F</span><span class="day">S</span></div>
+      </div><div class="lib today">
+        <div class="librow"><span class="libname">Friday: Shabbos preparation</span><span class="todaytag">Today</span></div>
+        <div class="librow"><span class="libwho">Maria</span></div>
+        <div class="days"><span class="day">S</span><span class="day">M</span><span class="day">T</span><span class="day">W</span><span class="day">T</span><span class="day on">F</span><span class="day">S</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Questions waiting</h2>
+      <div class="quiet">None right now.</div>
+    </div>
+
+    <div class="card">
+      <h2>This pilot</h2>
+      <div class="quiet" style="line-height:1.7">
+        Confirmations arrive as the four governed words: LISTO, FALTA, PREGUNTA, NO PUEDO.
+        Anything else waits for a human. The engine holds every message that could land
+        near candle-lighting. History and trends begin with the first live Monday.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="pipe">
+    <span class="stage"><div class="t">Standard</div><div class="d">The routine, set once, in her words</div></span>
+    <span class="arrow">→</span>
+    <span class="stage"><div class="t">Assignment</div><div class="d">The right person, the right day</div></span>
+    <span class="arrow">→</span>
+    <span class="stage"><div class="t">Confirmation</div><div class="d">LISTO · FALTA · PREGUNTA · NO PUEDO</div></span>
+    <span class="arrow">→</span>
+    <span class="stage"><div class="t">Accountability</div><div class="d">The evening digest, one message</div></span>
+    <span class="arrow">→</span>
+    <span class="stage"><div class="t">Insight</div><div class="d">Patterns across the weeks</div></span>
+  </div>
+  <div class="foot">Generated from the live Homease engine · Friday 2026-08-21 · nothing on this screen is invented</div>
+</footer>
+
+</div>
+</body>
+</html>

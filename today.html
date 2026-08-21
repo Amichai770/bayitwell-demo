@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homease — Thursday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:#F7F5EF; --white:#FFFFFF; --ink:#252824; --sage:#789081;
+    --pale-sage:#E5ECE6; --blue:#7E9299; --sand:#E8E0D3; --amber:#C99555;
+    --clay:#B96C5C; --soft:#8d897f; --line:#ECE8DE; --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:#efece4}
+  body{
+    background:var(--ivory); color:var(--ink);
+    font:15.5px/1.55 "Inter", -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Instrument Serif", Georgia, serif; font-weight:400}
+  .phone{max-width:412px; margin:28px auto 40px; background:var(--ivory);
+    border-radius:34px; box-shadow:0 18px 60px rgba(37,40,36,.13);
+    overflow:hidden; position:relative; min-height:820px; padding-bottom:96px}
+  .inner{padding:26px 22px 0}
+
+  .brand{display:flex; align-items:center; gap:9px; margin-bottom:22px}
+  .brand svg{width:26px; height:26px}
+  .brand .word{font-size:17px; letter-spacing:.01em}
+  .brand .word b{font-weight:500}
+
+  .date{color:var(--soft); font-size:12px; letter-spacing:.14em; text-transform:uppercase}
+  h1{font-size:34px; line-height:1.15; margin-top:8px; font-weight:400}
+  .statusline{margin-top:8px; font-size:16.5px; color:var(--amber)}
+
+  .seg{display:flex; gap:6px; background:var(--sand); border-radius:999px; padding:4px; margin:20px 0 18px}
+  .seg button{flex:1; border:0; background:transparent; border-radius:999px; padding:9px 0;
+    font:500 13.5px "Inter",sans-serif; color:var(--soft); cursor:pointer}
+  .seg button.active{background:var(--white); color:var(--ink); box-shadow:0 1px 4px rgba(37,40,36,.08)}
+
+  .card{background:var(--white); border:1px solid var(--line); border-radius:var(--r);
+    padding:18px 19px; margin-bottom:14px}
+  .card h2{font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft);
+    font-weight:600; margin-bottom:12px}
+
+  .statuscard{background:var(--pale-sage); border-color:transparent}
+  .statuscard .big{font-size:21px}
+  .counts{display:flex; gap:18px; margin-top:10px; color:var(--soft); font-size:13px}
+  .counts b{color:var(--ink); font-weight:600}
+
+  .need{display:flex; align-items:center; gap:12px; padding:11px 0}
+  .need + .need{border-top:1px solid var(--line)}
+  .need .txt{flex:1; font-size:15px}
+  .btn{border:0; background:var(--sage); color:var(--white); font:500 13px "Inter",sans-serif;
+    padding:8px 15px; border-radius:999px; cursor:pointer; white-space:nowrap}
+  .btn.ghost{background:var(--sand); color:var(--ink)}
+
+  .tl{position:relative; padding-left:2px}
+  .tlrow{display:flex; gap:14px; align-items:baseline; padding:9px 0}
+  .tlrow + .tlrow{border-top:1px solid var(--line)}
+  .tltime{font-size:13px; color:var(--soft); width:44px; flex:none; font-variant-numeric:tabular-nums}
+  .tllabel{font-size:15px; flex:1}
+  .tlstate{font-size:12.5px}
+  .tlstate.done{color:var(--sage)} .tlstate.progress{color:var(--blue)} .tlstate.open{color:var(--soft)}
+
+  .person{display:flex; align-items:center; gap:13px; padding:9px 0}
+  .person + .person{border-top:1px solid var(--line)}
+  .avatar{width:38px; height:38px; border-radius:50%; background:var(--sand); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; flex:none}
+  .pname{font-weight:500; font-size:15px}
+  .pline{color:var(--soft); font-size:13px}
+
+  .pill{display:inline-block; background:var(--pale-sage); border-radius:999px;
+    padding:5px 13px; margin:3px 5px 3px 0; font-size:13.5px}
+
+  .dot{width:9px; height:9px; border-radius:50%; flex:none; align-self:center}
+  .dot.done{background:var(--sage)} .dot.attn{background:var(--amber)}
+  .dot.open{border:1.5px solid var(--soft)}
+  .row{display:flex; gap:11px; padding:8px 0; font-size:14.5px; align-items:baseline}
+  .row + .row{border-top:1px solid var(--line)}
+  .row .who{margin-left:auto; color:var(--soft); font-size:12.5px; letter-spacing:.04em}
+  .rname{font-size:16.5px; margin:16px 0 5px}
+  .rname:first-of-type{margin-top:0}
+  .rmeta{color:var(--soft); font-size:12.5px}
+  .note{color:var(--amber); font-size:13px; margin-left:20px}
+  .quiet{color:var(--soft); font-size:14px}
+
+  nav{position:absolute; bottom:0; left:0; right:0; background:var(--white);
+    border-top:1px solid var(--line); display:flex; align-items:flex-end;
+    justify-content:space-around; padding:10px 8px 20px}
+  .nav-item{display:flex; flex-direction:column; align-items:center; gap:4px;
+    font-size:10.5px; color:var(--soft); width:60px; cursor:default}
+  .nav-item.active{color:var(--sage)}
+  .nav-item svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.6;
+    stroke-linecap:round; stroke-linejoin:round}
+  .ask{width:54px; height:54px; border-radius:50%; background:var(--sage);
+    display:flex; align-items:center; justify-content:center; margin-bottom:2px;
+    box-shadow:0 6px 16px rgba(120,144,129,.4)}
+  .ask svg{width:24px; height:24px; stroke:var(--white)}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="inner">
+
+  <div class="brand"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#789081"/>
+  <path d="M15 34 V22 C15 16 20 12 24 12 C28 12 33 16 33 22 V34" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  <path d="M15 26 H33" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round"/>
+</svg><span class="word serif"><b>Homease</b></span></div>
+
+  <div class="date">Thursday · 2026-08-20</div>
+  <h1 class="serif">Good morning, Sra. Stern</h1>
+  <div class="statusline">Your home is nearly on track.</div>
+
+  <div class="seg">
+    <button class="active" data-view="owner">Today</button>
+    <button data-view="manager">Manager</button>
+  </div>
+
+  <!-- ================= OWNER ================= -->
+  <div id="owner">
+
+    <div class="card statuscard">
+      <div class="big serif">2 things need you today.</div>
+      <div class="counts"><span><b>2</b> completed</span><span><b>4</b> in progress</span><span><b>0</b> need help</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Needs you</h2>
+      <div class="need"><span class="txt">Question: a que hora llegan los invitados</span><button class="btn">Answer</button></div><div class="need"><span class="txt">4 of 6 sections not confirmed</span><button class="btn">Review</button></div>
+    </div>
+
+    <div class="card">
+      <h2>Today</h2>
+      <div class="tlrow"><span class="tltime">08:30</span><span class="tllabel">Daily kitchen routine</span><span class="tlstate progress">In progress</span></div><div class="tlrow"><span class="tltime">08:30</span><span class="tllabel">Thursday: Shabbos preparation</span><span class="tlstate open">Scheduled</span></div>
+    </div>
+
+    <div class="card"><h2>Running low</h2><span class="pill">velas</span>
+           <div class="quiet" style="margin-top:9px">Gathered quietly from the day's replies.</div></div>
+
+    <div class="card">
+      <h2>People</h2>
+      <div class="person"><span class="avatar">M</span><span><div class="pname">Maria</div><div class="pline">Working through the day</div></span></div>
+    </div>
+  </div>
+
+  <!-- ================= MANAGER ================= -->
+  <div id="manager" class="hidden">
+    <div class="card">
+      <h2>Work queue · 2 of 6 confirmed</h2>
+      <div class="rname serif">Daily kitchen routine</div>
+          <div class="rmeta">Maria · sent 08:30</div>
+          <div class="row"><span class="dot done"></span><span>On arrival</span><span class="who">LISTO</span></div><div class="row"><span class="dot done"></span><span>Fruit and produce</span><span class="who">LISTO</span></div><div class="row"><span class="dot open"></span><span>Today's cooking</span><span class="who">—</span></div><div class="rname serif">Thursday: Shabbos preparation</div>
+          <div class="rmeta">Maria · sent 08:30</div>
+          <div class="row"><span class="dot open"></span><span>Soup</span><span class="who">—</span></div><div class="row"><span class="dot open"></span><span>Chulent ingredients</span><span class="who">—</span></div><div class="row"><span class="dot open"></span><span>Baking</span><span class="who">—</span></div>
+    </div>
+
+    <div class="card"><h2>Questions waiting</h2><div class="need"><span class="txt">a que hora llegan los invitados</span><button class="btn">Answer</button></div></div>
+
+    <div class="card">
+      <h2>Shopping list draft</h2>
+      <span class="pill">velas</span><div class="need" style="border:0;margin-top:8px"><span class="txt quiet">Send as one consolidated order?</span><button class="btn ghost">Review</button></div>
+    </div>
+  </div>
+
+</div>
+
+<nav>
+  <div class="nav-item active">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    Today
+  </div>
+  <div class="nav-item">
+    <svg viewBox="0 0 24 24"><path d="M5 20V10c0-4 3.5-7 7-7s7 3 7 7v10"/><path d="M5 14h14"/></svg>
+    Home
+  </div>
+  <div class="nav-item">
+    <div class="ask"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 1 7 7c0 4-3 6-5 7l-2 4-2-4c-2-1-5-3-5-7a7 7 0 0 1 7-7z"/></svg></div>
+    Ask
+  </div>
+  <div class="nav-item">
+    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+    Plans
+  </div>
+  <div class="nav-item">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg>
+    People
+  </div>
+</nav>
+</div>
+
+<script>
+  document.querySelectorAll(".seg button").forEach(t => t.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.classList.remove("active"));
+    t.classList.add("active");
+    document.getElementById("owner").classList.toggle("hidden", t.dataset.view !== "owner");
+    document.getElementById("manager").classList.toggle("hidden", t.dataset.view !== "manager");
+  }));
+</script>
+</body>
+</html>
