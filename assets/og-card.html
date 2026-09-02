@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bayitwell share card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --ivory:#F7F5EF; --ink:#252824; --sage:#789081; --sand:#E8E0D3;
+         --line:#ECE8DE; --soft:#8d897f; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:630px;background:var(--ivory);color:var(--ink);
+    font:16px/1.6 "Inter",-apple-system,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;overflow:hidden}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+  .card{height:100%;padding:74px 84px;display:flex;flex-direction:column;
+    justify-content:center;position:relative}
+  .glow{position:absolute;right:-140px;top:-160px;width:560px;height:560px;
+    border-radius:50%;background:#E5ECE6;opacity:.55}
+  .inner{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand svg{width:46px;height:46px}
+  .brand .word{font-size:31px;letter-spacing:.2px}
+  h1{font-size:70px;line-height:1.08;letter-spacing:-.5px;margin-top:44px}
+  p.sub{font-size:23px;line-height:1.5;color:#5d6159;margin-top:24px;max-width:830px}
+  .rule{height:1px;background:var(--line);margin:56px 0 26px}
+  .trust{font-size:17px;color:var(--soft);letter-spacing:.3px}
+  .trust b{color:#5d6159;font-weight:500}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="glow"></div>
+  <div class="inner">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="12" fill="#789081"/>
+        <path d="M15 34 V22 C15 16 20 12 24 12 C28 12 33 16 33 22 V34" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+        <path d="M15 26 H33" stroke="#F7F5EF" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span class="word serif"><b>Bayitwell</b></span>
+    </div>
+    <h1 class="serif">Your home's standards,<br>quietly carried through.</h1>
+    <p class="sub">A private household routine service for staffed, Shabbos-observant homes.</p>
+  </div>
+  <div class="inner">
+    <div class="rule"></div>
+    <div class="trust"><b>Private by design</b> · <b>Shabbos-aware</b> · <b>Built around worker dignity</b></div>
+  </div>
+</div>
+</body>
+</html>
