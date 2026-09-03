@@ -6,7 +6,7 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createApp, chooseTransport, chooseModel } from "../engine/src/serve.ts";
 import { chooseStore } from "../engine/src/store.ts";
-import { DemoDayStore } from "./demo-day.ts";
+import { DemoDayStore } from "../lib/demo-day.ts";
 
 // DEMO_DAY=1 plays the fictional household's day on a clock; otherwise the
 // real store, whatever the host provides.

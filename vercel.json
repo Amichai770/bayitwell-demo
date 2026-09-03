@@ -41,7 +41,7 @@
   ],
   "functions": {
     "api/app.ts": {
-      "includeFiles": "engine/**"
+      "includeFiles": "{engine,lib}/**"
     }
   }
 }
