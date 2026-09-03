@@ -31,6 +31,14 @@
       "destination": "/api/app?p=/"
     },
     {
+      "source": "/command-center",
+      "destination": "/api/app?p=/"
+    },
+    {
+      "source": "/today",
+      "destination": "/api/app?p=/today"
+    },
+    {
       "source": "/webhook",
       "destination": "/api/app?p=/webhook"
     },
