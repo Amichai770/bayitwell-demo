@@ -6,8 +6,12 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createApp, chooseTransport, chooseModel } from "../engine/src/serve.ts";
 import { chooseStore } from "../engine/src/store.ts";
+import { DemoDayStore } from "./demo-day.ts";
 
-const app = createApp({ store: chooseStore(), transport: chooseTransport() }, process.env, chooseModel());
+// DEMO_DAY=1 plays the fictional household's day on a clock; otherwise the
+// real store, whatever the host provides.
+const store = process.env.DEMO_DAY === "1" ? new DemoDayStore() : chooseStore();
+const app = createApp({ store, transport: chooseTransport() }, process.env, chooseModel());
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
   // vercel.json rewrites carry the original path in ?p= so the engine's own
