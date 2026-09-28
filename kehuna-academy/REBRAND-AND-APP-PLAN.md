@@ -88,6 +88,9 @@ The software is the cheaper half. The writing is:
 - Home page rewritten under the Mishmeret name: hero, join form, the verse, what a day looks like, who this is for, letter from Rabbi Amichai, three cards (Beit Midrash, Mishmar, the Kohen's calling), a word on money. Header logo switched to the text "Mishmeret" (the old image logo is one click away in the theme editor). Footer updated.
 - Visuals added: a rendered dusk-over-Jerusalem hero, a morning image under the verse, three stone-and-gold cards (Beit Midrash, Mishmar, Duchan) and a social card, all in `assets/`. Section backgrounds set to Jerusalem stone and warm white, buttons and header to the brand gold.
 
+- About page rewritten under Mishmeret (hero on the morning image, bio updated). Sign-up form renamed "Mishmeret: Join the first mishmar"; it already asks "Are you a Kohen?" and "Location". A draft broadcast to existing members sits in Kajabi ("Mishmeret announcement to existing members"), unsent, recipients not yet selected.
+- Week one of the Tamid is fully drafted (days 1 to 7) in COPY-front-page-invitation-week1.md and in the Mishmeret Drive folder.
+
 ## Sequencing
 
 1. **Now.** Clean the Rambam course on Kajabi (remove template lessons, finish chapter 8). Rewrite kehunacademy.com's front page as "for Kohanim" under the new name. Check domains.
