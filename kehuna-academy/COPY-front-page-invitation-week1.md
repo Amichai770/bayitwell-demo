@@ -155,4 +155,102 @@ Who are two people you could stand between this week?
 
 ---
 
-Days 4 through 7 follow the same shape and are ready to draft once you approve the voice of days 1 to 3.
+### Day 4, morning
+
+B"H
+*Tamid shel Shachar*
+
+וְהָיוּ עַל לֵב אַהֲרֹן בְּבֹאוֹ לִפְנֵי יְיָ
+"And they shall be upon Aharon's heart when he comes before Hashem." Shemot 28:30
+
+The names of the twelve tribes were set into the Choshen, and the Torah says where Aharon carried them. Not on his shoulders only. On his heart. A Kohen goes in carrying people. Before you go into your day, there are names you are carrying too, whether you chose them or not.
+
+Whose name is on your heart this morning, and what would it mean to carry it in on purpose?
+
+### Day 4, afternoon
+
+B"H
+*Tamid shel Bein HaArbayim*
+
+וְהָיָה אַהֲרֹן וּבָנָיו עֹשִׂים כֹּל
+"And Aharon and his sons shall do everything." Bamidbar 4:19, on the work of the sons of Kehat
+
+When the Kohathites carried the holiest vessels, they were not allowed to look at them uncovered. Aharon and his sons went in first and covered each one. The Kohen's work was often the work of covering, of protecting what is holy from being handled carelessly.
+
+What did you cover today so that something holy would not be handled carelessly? What still needs covering before the day ends?
+
+### Day 5, morning
+
+B"H
+*Tamid shel Shachar*
+
+וְאֵשׁ הַמִּזְבֵּחַ תּוּקַד בּוֹ
+"And the fire of the altar shall be kept burning on it." Vayikra 6:2
+
+The fire on the Mizbeach was never allowed to go out, and it was the Kohen's job every morning to add wood before anything else. Not to light it. It was already burning. To keep it. Most of the Kehuna is like this. The fire is there. The work is the wood.
+
+What is one piece of wood you can add this morning to a fire that is already burning in you?
+
+### Day 5, afternoon
+
+B"H
+*Tamid shel Bein HaArbayim*
+
+בְּעֶרֶב אַתָּה מְקַטֵּר
+"In the evening you shall burn the incense." From Shemot 30:8, on the Ketoret
+
+Aharon burned the Ketoret twice a day, once in the morning when he tended the lamps and once at bein ha'arbayim when he lit them. The incense was the most inward part of the avodah, done alone, with no one watching. It left a scent and nothing else.
+
+What is one thing you can do this evening that no one will see and that leaves only a scent?
+
+### Day 6, morning
+
+B"H
+*Tamid shel Shachar*
+
+בְּהַעֲלֹתְךָ אֶת הַנֵּרֹת
+"When you raise up the lamps." Bamidbar 8:2
+
+Rashi asks why the Torah says to raise the lamps rather than to light them. He answers: the Kohen holds the flame to the wick until the flame rises on its own. That is what a Kohen does with a person too. He stays until the light stands by itself.
+
+Who in your life needs you to hold the flame a little longer this morning, until it rises on its own?
+
+### Day 6, afternoon
+
+B"H
+*Tamid shel Bein HaArbayim*
+
+שָׁלוֹם שָׁלוֹם לָרָחוֹק וְלַקָּרוֹב
+"Peace, peace, to the one who is far and to the one who is near." Yeshayahu 57:19
+
+Erev Shabbat. The whole week of a Kohen ends where Birkat Kohanim ends, in shalom. The verse says it twice. The Sages read this as the one who is far first, and only then the one who is near. Peace begins with the person you have been avoiding.
+
+Before Shabbat comes in, who is the far one, and what is one word of peace you can send?
+
+### Day 7, Shabbat morning (for reading, not sending)
+
+B"H
+*Tamid shel Shachar*
+
+וְעָרַךְ אֹתוֹ לִפְנֵי יְיָ תָּמִיד
+"And he shall arrange it before Hashem always." Vayikra 24:8, on the Lechem HaPanim
+
+Every Shabbat the Kohanim replaced the twelve loaves on the Shulchan, and the Torah says the old bread was still warm when it came off. A week is long, and the bread stayed fresh the whole time. The Kohen's work on Shabbat was to arrange, not to bake. Everything was already there.
+
+What has stayed warm this whole week without your effort, and can you simply arrange it today?
+
+### Day 7, Shabbat afternoon (for reading, not sending)
+
+B"H
+*Tamid shel Bein HaArbayim*
+
+וַיִּשָּׂא אַהֲרֹן אֶת יָדָיו אֶל הָעָם וַיְבָרְכֵם
+"And Aharon lifted his hands toward the people and blessed them." Vayikra 9:22
+
+The first Birkat Kohanim in history happened on the eighth day of the Mishkan, at the end of the avodah, before the fire came down. Aharon did not wait to see whether it worked. He blessed first. That is the order. Bless, and then the fire.
+
+As Shabbat goes out, whom will you bless before you know whether it worked?
+
+---
+
+Week two onward is drafted by the Sunday routine into the Mishmeret folder.
