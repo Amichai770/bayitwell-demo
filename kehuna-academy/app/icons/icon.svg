@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171B3A"/><stop offset=".55" stop-color="#4B3B6B"/><stop offset="1" stop-color="#C97A5A"/></linearGradient>
+  <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF6DC"/><stop offset=".55" stop-color="#F1D89A"/><stop offset="1" stop-color="#F1D89A" stop-opacity="0"/></radialGradient></defs>
+  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
+  <circle cx="256" cy="300" r="120" fill="url(#sun)"/>
+  <path d="M0 400 L70 380 L140 392 L210 372 L280 386 L350 366 L420 384 L512 372 L512 512 L0 512 Z" fill="#1D1F3C" opacity=".8"/>
+  <path d="M0 430 L512 430 L512 512 L0 512 Z" fill="#121428"/>
+  <path d="M196 430 C196 390 222 366 256 366 C290 366 316 390 316 430 Z" fill="#121428"/>
+  <text x="256" y="230" text-anchor="middle" font-family="Frank Ruhl Libre, FreeSerif, serif" font-size="150" font-weight="700" fill="#F1D89A">מ</text>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "name": "mishmeret",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mishmeret: a daily watch of the priesthood, for the Kohanim of today.",
+  "scripts": {
+    "build:artifact": "node scripts/build-artifact.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.129.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^16.0.1"
+  }
+}

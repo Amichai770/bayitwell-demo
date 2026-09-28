@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mishmeret</title>
+<meta name="description" content="A daily watch of the priesthood, for the Kohanim of today. Two minutes in the morning and two at sunset, Birkat Kohanim word by word, the 24 watches, a Beit Midrash and a study companion.">
+<meta name="theme-color" content="#171B3A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mishmeret">
+<meta property="og:title" content="Mishmeret">
+<meta property="og:description" content="For the Kohanim of today. A daily watch of the priesthood.">
+<meta property="og:image" content="https://raw.githubusercontent.com/Amichai770/bayitwell-demo/claude/kehuna-academy-app-gf10md/kehuna-academy/assets/og-mishmeret.jpg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--APP-START-->
+<div class="app">
+<main id="main">
+
+<section class="screen" id="s-tamid">
+  <div class="topbar">
+    <div class="brandmark">Mishmeret <span class="he">מִשְׁמֶרֶת</span></div>
+    <button class="pill btn-like" data-tab="me">You</button>
+  </div>
+  <div class="hero evening" id="hero">
+    <div class="skybox">
+      <div class="sun"></div>
+      <svg viewBox="0 0 480 120" aria-hidden="true" preserveAspectRatio="none">
+        <path fill="var(--hill)" opacity=".55" d="M0 78 L60 62 L120 70 L180 52 L240 60 L300 44 L360 58 L420 50 L480 64 L480 120 L0 120 Z"/>
+        <g fill="var(--hill)">
+          <path d="M0 96 L40 96 L40 84 L52 84 L52 92 L70 92 L70 74 L82 74 L82 92 L100 92 L100 80 L112 80 L112 96 L140 96 L140 88 L150 88 L150 96 L168 96 L168 76 L176 76 L176 96 L200 96 L200 84 L210 84 L210 96 L230 96 L230 82 L236 82 L236 96 L480 96 L480 120 L0 120 Z"/>
+          <path d="M236 96 C236 76 252 64 270 64 C288 64 304 76 304 96 Z"/>
+          <path d="M268 64 L270 54 L272 64 Z"/>
+          <path d="M304 96 L304 86 L318 86 L318 96 L330 96 L330 70 L336 70 L336 96 L352 96 L352 88 L364 88 L364 96 L390 96 L390 84 L398 84 L398 96 L420 96 L420 90 L432 90 L432 96 L446 96 L446 78 L452 78 L452 96 L480 96 Z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="over">
+      <span class="eyebrow" id="hero-eyebrow">Bein HaArbayim</span>
+      <h1 id="hero-title">The Tamid of the afternoon</h1>
+      <span class="he" id="hero-he">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</span>
+    </div>
+  </div>
+  <div class="stack-lg" style="padding-top:20px">
+    <div class="stack">
+      <div class="meta">
+        <span>Your mishmar <b id="mine-name">not chosen</b></span>
+        <span>On duty this week <b id="duty-name">…</b></span>
+      </div>
+      <div class="seg" role="group" aria-label="Which Tamid">
+        <button id="seg-morning" aria-pressed="false">Morning</button>
+        <button id="seg-evening" aria-pressed="true">Afternoon</button>
+      </div>
+      <p class="note" id="tamid-day">Two minutes. One source, one teaching, one question, one thing placed on the altar.</p>
+    </div>
+    <div class="card stack">
+      <div class="step"><span class="n">א</span>
+        <div class="source"><div class="he" id="t-src-he"></div><div class="en" id="t-src-en"></div><div class="ref" id="t-src-ref"></div></div></div>
+      <div class="rule"></div>
+      <div class="step"><span class="n">ב</span><div class="stack" style="gap:10px"><span class="eyebrow">Teaching</span><p id="t-teach"></p></div></div>
+      <div class="rule"></div>
+      <div class="step"><span class="n">ג</span><div class="stack" style="gap:10px"><span class="eyebrow">The question</span><p class="q" id="t-q"></p></div></div>
+      <div class="rule"></div>
+      <div class="step"><span class="n">ד</span>
+        <div class="stack" style="gap:10px">
+          <label class="eyebrow" for="t-reflect">Place it on the altar</label>
+          <textarea id="t-reflect" placeholder="One line is enough."></textarea>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn" id="t-keep">Offer it</button><span class="note" id="t-kept"></span></div>
+          <p class="note">Kept on this phone only. Nothing here is shared.</p>
+        </div></div>
+    </div>
+    <div class="stack">
+      <span class="eyebrow">Why two moments</span>
+      <p>In the Mikdash the whole day was held between two lambs. Nothing was offered before the morning Tamid, and nothing after the Tamid of the afternoon. The Rambam brings this in Hilchot Temidin uMusafin, chapter one. We have no lamb. The frame is still ours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s-duchan" hidden>
+  <div class="topbar"><div class="brandmark">Duchan <span class="he">דּוּכָן</span></div><span class="pill">Birkat Kohanim</span></div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack"><h2>The blessing you carry</h2><p>Tap any word. Each one has a plain meaning, a Rashi, and an inner kavana to bring up with you. In Eretz Yisrael the Kohanim bless every morning. In most communities outside Israel, on Yom Tov at Mussaf.</p></div>
+    <div class="card"><div class="verse-wrap" id="verses"></div><p class="note" style="text-align:center;margin-top:6px">Three words, five words, seven words. Fifteen words. Sixty letters.</p></div>
+    <div class="card kav" id="kav" hidden>
+      <div class="word he" id="kav-word"></div>
+      <div><div class="lab">Plain meaning</div><p id="kav-plain"></p></div>
+      <div><div class="lab" id="kav-src-lab">Rashi</div><p id="kav-src"></p></div>
+      <div><div class="lab">Inner kavana</div><p id="kav-inner"></p></div>
+    </div>
+    <div class="card"><details><summary>Before you go up</summary><div class="check" id="prep"></div><p class="note" style="padding-top:12px">Customs differ between communities. Follow your own rav and your own minhag.</p></details></div>
+    <div class="card"><details><summary>Sixty seconds of kavana</summary><div class="stack"><p id="kavana60"></p></div></details></div>
+  </div>
+</section>
+
+<section class="screen" id="s-mishmar" hidden>
+  <div class="topbar"><div class="brandmark">Mishmar <span class="he">מִשְׁמָר</span></div><span class="pill">The 24 watches</span></div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack"><h2>Every Kohen belongs to a watch</h2><p>In the Mikdash the Kohanim served in twenty-four mishmarot, listed in Divrei HaYamim I, chapter 24. Each watch came up to Jerusalem for one week, twice a year. Here it works the same way. Tap a watch to make it yours. When your watch is on duty, your circle hosts the week's question and receives the live class.</p></div>
+    <div class="stack"><div class="legend"><span class="l-mine">Your mishmar</span><span class="l-duty">On duty this week</span></div><div class="watches" id="watches"></div><p class="note">The watch on duty rotates by the week of the year.</p></div>
+    <div class="card stack" id="wa-card">
+      <span class="eyebrow">The first mishmar</span>
+      <p>For now the first mishmar meets in one WhatsApp group where Rabbi Amichai sends the two Tamid messages himself. Ask him to add you, or use the link if he gave you one.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn gold" id="wa-link" href="#" hidden>Open the WhatsApp group</a><a class="btn ghost" id="site-link" href="#" target="_blank" rel="noopener">Join at kehunacademy.com</a></div>
+    </div>
+    <div class="card stack">
+      <span class="eyebrow">Your first mishmar is your family</span>
+      <p>"You and your sons with you." The Kehuna passes from father to son, so every Kohen arrives with a watch already: a father, a brother, a son, an uncle. Bring one of them.</p>
+      <textarea id="fam-text" readonly rows="5"></textarea>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn small" id="fam-copy">Copy the invitation</button><span class="note" id="fam-done"></span></div>
+    </div>
+    <div class="card stack">
+      <span class="eyebrow">This week in <span id="duty-name-2">…</span></span>
+      <div class="msg q"><div class="av">א</div><div><div class="who">Rabbi Amichai · question for the week</div><p class="q" id="weekly-q"></p></div></div>
+      <div class="rule"></div>
+      <label class="eyebrow" for="m-reply">Your answer</label>
+      <textarea id="m-reply" placeholder="What did you notice?"></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="m-keep">Keep it</button><button class="btn ghost" id="m-share">Copy to share with the watch</button></div>
+      <p class="note">Kept on this phone. Share it in the group if you want to.</p>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s-learn" hidden>
+  <div id="learn-index">
+    <div class="topbar"><div class="brandmark">Beit Midrash <span class="he">בֵּית מִדְרָשׁ</span></div><span class="pill">Three paths</span></div>
+    <div class="stack-lg" style="padding-top:10px" id="paths"></div>
+  </div>
+  <div id="learn-lesson" hidden>
+    <div class="topbar"><div class="brandmark" id="l-path"></div><span class="pill" id="l-count"></span></div>
+    <div class="stack-lg" style="padding-top:10px">
+      <div class="stack"><span class="eyebrow" id="l-eyebrow"></span><h2 id="l-title"></h2></div>
+      <div class="card stack"><div class="source"><div class="he" id="l-src-he"></div><div class="en" id="l-src-en"></div><div class="ref" id="l-src-ref"></div></div></div>
+      <div class="stack" id="l-body"></div>
+      <div class="stack"><span class="eyebrow">The question</span><p class="q" id="l-q"></p></div>
+      <div class="card stack">
+        <label class="eyebrow" for="l-reflect">Reflect</label>
+        <textarea id="l-reflect" placeholder="Write freely. This stays on your phone."></textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="l-keep">Keep it</button><button class="btn ghost" id="l-ask">Ask about this source</button><button class="btn ghost" id="l-next">Next day</button></div>
+      </div>
+      <button class="back" id="l-back">← Back to the Beit Midrash</button>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s-ask" hidden>
+  <div class="topbar"><div class="brandmark">Ask <span class="he">שְׁאַל</span></div><span class="pill">Study companion</span></div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack">
+      <p>A companion for study, grounded in the Rambam, the sources of this Beit Midrash, and Rabbi Amichai's recorded teaching. It shows its sources. It does not decide halacha for your situation. For that, ask your rav.</p>
+      <div class="status" id="ask-status"><span class="dot"></span><span>Checking whether live answers are available…</span></div>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="chat" id="chat">
+      <div class="bubble user">Why does the Kohen not own land?</div>
+      <div class="bubble ai" id="first-answer"></div>
+    </div>
+    <div class="composer"><textarea id="ask-input" placeholder="Ask about the Kehuna…" rows="1"></textarea><button class="btn" id="ask-send">Ask</button></div>
+  </div>
+</section>
+
+<section class="screen" id="s-me" hidden>
+  <div class="topbar"><div class="brandmark">You <span class="he">אַתָּה</span></div><span class="pill" id="version">v0.1</span></div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="card stack">
+      <div class="field"><label for="me-name">Your name</label><input type="text" id="me-name" placeholder="As you would like to be called"></div>
+      <div class="field"><label for="me-watch">Your mishmar</label><select id="me-watch"></select></div>
+      <div class="field"><label for="me-kohen">Are you a Kohen?</label><select id="me-kohen"><option value="">Choose</option><option value="yes">Yes</option><option value="no">No, I am learning alongside</option></select></div>
+      <div><button class="btn" id="me-save">Save</button></div>
+      <p class="note">Saved on this phone only. Sign-in and shared circles come in the next version.</p>
+    </div>
+    <div class="install" id="install-hint">
+      <strong>Keep Mishmeret on your home screen.</strong> On iPhone: tap Share, then "Add to Home Screen." On Android: tap the menu, then "Install app" or "Add to Home screen." It then opens like an app, full screen.
+    </div>
+    <div class="stack">
+      <span class="eyebrow">About</span>
+      <p>Mishmeret is a daily watch of the priesthood, for the Kohanim of today. It is free, a passion project of Live Kabbalah, formerly Kehuna Academy. Every teaching here is written by Rabbi Amichai Cohen and reviewed by him. Halacha in the app explains the sources; it never rules on a personal case.</p>
+      <p><a id="about-site" href="#" target="_blank" rel="noopener">kehunacademy.com</a></p>
+    </div>
+    <div><button class="btn ghost small" id="me-reset">Clear everything saved on this phone</button></div>
+  </div>
+</section>
+
+</main>
+<nav class="tabbar" aria-label="Sections"><div class="inner">
+  <button data-tab="tamid" aria-current="page"><span class="he">תמיד</span>Tamid</button>
+  <button data-tab="duchan"><span class="he">דוכן</span>Duchan</button>
+  <button data-tab="mishmar"><span class="he">משמר</span>Mishmar</button>
+  <button data-tab="learn"><span class="he">בית מדרש</span>Learn</button>
+  <button data-tab="ask"><span class="he">שאל</span>Ask</button>
+</div></nav>
+<div class="toast" id="toast" role="status"></div>
+</div>
+<script src="content.js"></script>
+<script src="app.js"></script>
+<!--APP-END-->
+</body>
+</html>
