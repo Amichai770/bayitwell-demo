@@ -300,6 +300,17 @@ details > div{padding-top:14px}
     </div>
 
     <div class="card stack">
+      <span class="eyebrow">Your first mishmar is your family</span>
+      <p>"You and your sons with you." The Kehuna passes from father to son, so every Kohen arrives with a watch already: a father, a brother, a son, an uncle. Bring one of them.</p>
+      <textarea id="fam-text" readonly rows="5">B"H
+I joined something for Kohanim called Mishmeret. Two minutes in the morning and two at sunset, one source and one question, with a mishmar of Kohanim who keep it together. It is free. I want to keep it with you. Here is the link: kehunacademy.com</textarea>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn small" id="fam-copy">Copy the invitation</button>
+        <span class="note" id="fam-done"></span>
+      </div>
+    </div>
+
+    <div class="card stack">
       <span class="eyebrow">This week in <span id="duty-name-2">…</span></span>
       <div class="thread" id="thread">
         <div class="msg q">
@@ -575,6 +586,15 @@ details > div{padding-top:14px}
     });
     row.appendChild(line); row.appendChild(c);
     vw.appendChild(row);
+  });
+
+  /* ---------- Family watch ---------- */
+  $('fam-copy').addEventListener('click', function(){
+    var ta = $('fam-text'); var done = $('fam-done');
+    var fallback = function(){ ta.focus(); ta.select(); done.textContent = 'Selected. Copy it from the box.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(function(){ done.textContent = 'Copied. Send it to one Kohen.'; }).catch(fallback);
+    } else fallback();
   });
 
   /* ---------- Mishmar thread ---------- */
