@@ -81,6 +81,13 @@ The software is the cheaper half. The writing is:
 - Chapter 8 of Beit HaBechira, still to record.
 - 3 Inner Kehuna sessions, cut from the existing Eli conversation.
 
+## What has been done on Kajabi (September 28, 2026)
+
+- Course renamed to "Rambam, Hilchot Beit HaBechira", lessons renamed Chapter 1 to 8, template modules unpublished.
+- The three paid tiers ($36, $108, $1,800) reverted to draft. The free Rambam offer and "Give What You Want" stay published.
+- Home page rewritten under the Mishmeret name: hero, join form, the verse, what a day looks like, who this is for, letter from Rabbi Amichai, three cards (Beit Midrash, Mishmar, the Kohen's calling), a word on money. Header logo switched to the text "Mishmeret" (the old image logo is one click away in the theme editor). Footer updated.
+- Images and background photos were left as they were.
+
 ## Sequencing
 
 1. **Now.** Clean the Rambam course on Kajabi (remove template lessons, finish chapter 8). Rewrite kehunacademy.com's front page as "for Kohanim" under the new name. Check domains.
