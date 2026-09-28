@@ -41,7 +41,9 @@ Voice: Rabbi Amichai's teaching voice. Warm, plain, sourced. No fluff, no cosmic
 
 ## Visual direction
 
-Jerusalem at bein ha'arbayim. The palette is the sky at that hour over stone.
+Chosen on September 28: **Jerusalem Stone** (look two of five in `design/looks.html`). Limestone #F6F2EA, ink #1E1C19, copper #8A5A2B, hairline rules, no illustration; Newsreader for English, David Libre for Hebrew, Manrope for labels. The dusk-and-gold direction below is kept as the alternative and as the night mode idea.
+
+The earlier direction, Jerusalem at bein ha'arbayim. The palette is the sky at that hour over stone.
 
 - Jerusalem stone, warm (#ECE4D4) as the daytime ground; dusk indigo (#141828) as the night ground.
 - Gold (#A9802A light, #D6AE58 dark) for the one accent: the Hebrew letter markers, the on-duty state, the source references.

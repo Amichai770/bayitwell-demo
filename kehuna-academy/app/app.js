@@ -68,7 +68,7 @@
   var HERO={ morning:{eyebrow:'Boker',title:'The Tamid of the morning',he:'תָּמִיד שֶׁל שַׁחַר'}, evening:{eyebrow:'Bein HaArbayim',title:'The Tamid of the afternoon',he:'תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם'} };
   function renderTamid(m){
     mode=m; var now=new Date(); var week=weekFor(now); var day=week.days[now.getDay()]; var t=(m==='morning')?day.morning:day.afternoon; var h=HERO[m];
-    $('hero').className='hero '+m; $('hero-eyebrow').textContent=h.eyebrow; $('hero-title').textContent=h.title; $('hero-he').textContent=h.he;
+    $('hero').className='hero '+m; $('hero-eyebrow').textContent=h.eyebrow+' \u00b7 '+DAYS[now.getDay()]; $('hero-title').textContent=h.title; $('hero-he').textContent=h.he;
     $('tamid-day').textContent=DAYS[now.getDay()]+' · '+week.label+'. One source, one teaching, one question, one thing placed on the altar.';
     $('t-src-he').textContent=t.he; $('t-src-en').textContent=t.en; $('t-src-ref').textContent=t.ref; $('t-teach').textContent=t.teach; $('t-q').textContent=t.q;
     $('seg-morning').setAttribute('aria-pressed',m==='morning'); $('seg-evening').setAttribute('aria-pressed',m==='evening');
