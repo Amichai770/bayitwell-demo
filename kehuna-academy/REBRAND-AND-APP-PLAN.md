@@ -95,7 +95,7 @@ The software is the cheaper half. The writing is:
 
 1. **Now.** Clean the Rambam course on Kajabi (remove template lessons, finish chapter 8). Rewrite kehunacademy.com's front page as "for Kohanim" under the new name. Check domains.
 2. **Weeks 1 to 6.** Personally invite 20 to 30 Kohanim, starting with Eli and the existing members, into one WhatsApp mishmar. Send the two daily Tamid messages there. This proves the daily habit before code.
-3. **Then.** Build the working app from this prototype: sign-in, real mishmar assignment, the 30-day path, audio, and the study companion on Live Kabbalah's own Second Brain. Mobile web first, installable on the phone. Native apps only if usage earns them.
+3. **Built, September 28.** The app lives in `app/`: installable mobile web app, Tamid with week one, Duchan, Mishmar, Beit Midrash with three open lessons, Ask backed by a Vercel endpoint on the Claude API, and a You screen. Deploy steps are in `app/README.md`. Still to come in the next version: sign-in, real mishmar assignment, the 30-day path, audio, and the study companion on Live Kabbalah's own Second Brain. Mobile web first, installable on the phone. Native apps only if usage earns them.
 
 ## What still needs verifying
 
