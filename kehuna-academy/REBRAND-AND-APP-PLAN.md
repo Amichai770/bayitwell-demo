@@ -86,7 +86,7 @@ The software is the cheaper half. The writing is:
 - Course renamed to "Rambam, Hilchot Beit HaBechira", lessons renamed Chapter 1 to 8, template modules unpublished.
 - The three paid tiers ($36, $108, $1,800) reverted to draft. The free Rambam offer and "Give What You Want" stay published.
 - Home page rewritten under the Mishmeret name: hero, join form, the verse, what a day looks like, who this is for, letter from Rabbi Amichai, three cards (Beit Midrash, Mishmar, the Kohen's calling), a word on money. Header logo switched to the text "Mishmeret" (the old image logo is one click away in the theme editor). Footer updated.
-- Images and background photos were left as they were.
+- Visuals added: a rendered dusk-over-Jerusalem hero, a morning image under the verse, three stone-and-gold cards (Beit Midrash, Mishmar, Duchan) and a social card, all in `assets/`. Section backgrounds set to Jerusalem stone and warm white, buttons and header to the brand gold.
 
 ## Sequencing
 
