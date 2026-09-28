@@ -1,0 +1,669 @@
+<title>Mishmeret</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#ECE4D4; --surface:#F7F2E8; --surface2:#E3D9C4; --ink:#23262F; --muted:#6E6759; --line:#D5CAB3;
+  --gold:#A9802A; --gold-soft:#E7D6A6; --ember:#B45A36; --sky-a:#F4D7A6; --sky-b:#C9B7D8; --sky-c:#5F6E9E;
+  --hill:#2A2C45; --focus:#A9802A;
+  --display:"Cormorant Garamond","Frank Ruhl Libre",Georgia,serif;
+  --body:"Frank Ruhl Libre","Cormorant Garamond",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141828; --surface:#1D2238; --surface2:#262C48; --ink:#EDE5D3; --muted:#A79F8D; --line:#343B5C;
+    --gold:#D6AE58; --gold-soft:#5A4A22; --ember:#E27E52; --hill:#0E1020; --focus:#D6AE58;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141828; --surface:#1D2238; --surface2:#262C48; --ink:#EDE5D3; --muted:#A79F8D; --line:#343B5C;
+  --gold:#D6AE58; --gold-soft:#5A4A22; --ember:#E27E52; --hill:#0E1020; --focus:#D6AE58;
+}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;position:relative}
+main{flex:1;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.screen{padding-inline:20px;padding-block:0 32px}
+.he{font-family:var(--body);direction:rtl;unicode-bidi:isolate}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:2.1rem}
+h2{font-size:1.55rem}
+h3{font-size:1.2rem}
+p{margin:0}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.stack{display:flex;flex-direction:column;gap:14px}
+.stack-lg{display:flex;flex-direction:column;gap:26px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding-block:14px 6px}
+.brandmark{font-family:var(--display);font-size:1.15rem;font-weight:600;letter-spacing:.02em}
+.brandmark .he{font-size:1rem;color:var(--muted);margin-inline-start:8px}
+.pill{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.hero{position:relative;margin-inline:-20px;overflow:hidden;color:#F6EEDC}
+.hero .skybox{position:relative;height:250px;background:linear-gradient(180deg,var(--sky-c) 0%,var(--sky-b) 52%,var(--sky-a) 100%)}
+.hero.morning .skybox{--sky-c:#7F97C4;--sky-b:#D6CBD2;--sky-a:#F7DFB0}
+.hero.evening .skybox{--sky-c:#252B52;--sky-b:#8A5E86;--sky-a:#E8A25E}
+.hero .sun{position:absolute;left:50%;transform:translateX(-50%);width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,#FFF3D2 0%,#F7CF86 55%,rgba(247,207,134,0) 72%);opacity:.95}
+.hero.morning .sun{top:96px}
+.hero.evening .sun{top:134px}
+.hero svg{position:absolute;left:0;bottom:-1px;width:100%;height:auto;display:block}
+.hero .over{position:absolute;inset:0;padding:22px 20px;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;text-shadow:0 1px 10px rgba(20,20,40,.35)}
+.hero .over .eyebrow{color:#F6EEDC;opacity:.85}
+.hero .over h1{color:#FBF4E4}
+.hero .over .he{font-size:1.25rem;opacity:.95}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:3px;background:var(--surface);width:max-content}
+.seg button{padding:6px 14px;border-radius:999px;font-size:.85rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+.step{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.step .n{font-family:var(--display);font-size:1.05rem;color:var(--gold);font-weight:600;line-height:1.4}
+.source .he{font-size:1.45rem;line-height:1.7;font-weight:500}
+.source .en{color:var(--muted);font-style:italic;font-family:var(--display);font-size:1.1rem;margin-top:6px}
+.source .ref{font-size:.8rem;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.rule{height:1px;background:var(--line);margin-block:4px}
+textarea,input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;color:var(--ink);resize:vertical;min-height:88px}
+input[type=text]{min-height:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:500;font-size:.95rem}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:8px 14px;font-size:.85rem}
+.note{font-size:.85rem;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.88rem;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:500}
+/* Duchan */
+.verse{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;direction:rtl}
+.verse button{font-family:var(--body);font-size:1.75rem;line-height:1.4;padding:4px 8px;border-radius:10px;border:1px solid transparent}
+.verse button:hover{border-color:var(--line)}
+.verse button[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold)}
+.verse-wrap{display:flex;flex-direction:column;gap:6px;padding-block:8px}
+.verse-row{display:flex;align-items:center;gap:10px}
+.verse-row .count{font-family:var(--display);color:var(--gold);font-size:.95rem;min-width:52px;text-align:left}
+.kav{border-top:2px solid var(--gold);padding-top:14px;display:flex;flex-direction:column;gap:10px}
+.kav .word{font-size:2rem;text-align:right}
+.kav .lab{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.check{display:flex;flex-direction:column;gap:10px}
+.check label{display:flex;gap:12px;align-items:flex-start;font-size:.97rem}
+.check input{margin-top:6px;accent-color:var(--gold)}
+details summary{cursor:pointer;font-family:var(--display);font-size:1.15rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details summary::after{content:"+";color:var(--gold);font-size:1.4rem}
+details[open] summary::after{content:"–"}
+details > div{padding-top:14px}
+/* Mishmar */
+.watches{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.watch{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:.92rem}
+.watch .num{font-family:var(--display);color:var(--muted);min-width:20px;font-size:.9rem}
+.watch .he{margin-inline-start:auto;color:var(--muted);font-size:.95rem}
+.watch.mine{border-color:var(--gold);background:var(--gold-soft)}
+.watch.duty{border-color:var(--ember)}
+.watch.duty .num{color:var(--ember)}
+.legend{display:flex;gap:16px;font-size:.82rem;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:6px;vertical-align:middle;border:1px solid var(--line)}
+.legend .l-mine::before{background:var(--gold-soft);border-color:var(--gold)}
+.legend .l-duty::before{border-color:var(--ember)}
+.thread{display:flex;flex-direction:column;gap:14px}
+.msg{display:grid;grid-template-columns:36px 1fr;gap:12px}
+.msg .av{width:36px;height:36px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;color:var(--ink)}
+.msg .who{font-size:.8rem;color:var(--muted);margin-bottom:2px}
+.msg.q .av{background:var(--gold);color:#1C1A14}
+/* Learn */
+.path{display:flex;flex-direction:column;gap:12px}
+.pathhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.lessons{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.lessons button,.lessons .row{display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center;text-align:left;padding:12px 4px;border-bottom:1px solid var(--line);width:100%}
+.lessons .d{font-family:var(--display);color:var(--gold);font-weight:600}
+.lessons .t{font-size:.98rem}
+.lessons .tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lessons button:hover .t{text-decoration:underline;text-decoration-color:var(--gold)}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.9rem;margin-top:14px}
+/* Ask */
+.chat{display:flex;flex-direction:column;gap:14px}
+.bubble{padding:14px 16px;border-radius:16px;max-width:92%;font-size:.98rem}
+.bubble.user{align-self:flex-end;background:var(--ink);color:var(--bg);border-bottom-right-radius:4px}
+.bubble.ai{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bubble.ai .src{display:block;margin-top:8px;font-size:.78rem;color:var(--gold);letter-spacing:.04em}
+.composer{display:flex;gap:8px;align-items:flex-end;position:sticky;bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--bg);padding-block:10px}
+.composer textarea{min-height:48px;max-height:140px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.85rem;color:var(--muted);background:var(--surface)}
+.status{font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.status.live .dot{background:#4E8C5F}
+/* Tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.tabbar .inner{display:grid;grid-template-columns:repeat(5,1fr);width:100%;max-width:480px}
+.tabbar button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 9px;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tabbar button .he{font-size:1.05rem;font-weight:500;color:var(--ink);opacity:.8}
+.tabbar button[aria-current="page"]{color:var(--gold)}
+.tabbar button[aria-current="page"] .he{color:var(--gold);opacity:1}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(100px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:.88rem;opacity:0;transition:opacity .25s;pointer-events:none;z-index:6}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
+</style>
+
+<div class="app">
+<main id="main">
+
+<!-- ===================== TAMID ===================== -->
+<section class="screen" id="s-tamid">
+  <div class="topbar">
+    <div class="brandmark">Mishmeret <span class="he">מִשְׁמֶרֶת</span></div>
+    <span class="pill">Prototype</span>
+  </div>
+  <div class="hero evening" id="hero">
+    <div class="skybox">
+      <div class="sun"></div>
+      <svg viewBox="0 0 480 120" aria-hidden="true" preserveAspectRatio="none">
+        <path fill="var(--hill)" opacity=".55" d="M0 78 L60 62 L120 70 L180 52 L240 60 L300 44 L360 58 L420 50 L480 64 L480 120 L0 120 Z"/>
+        <g fill="var(--hill)">
+          <path d="M0 96 L40 96 L40 84 L52 84 L52 92 L70 92 L70 74 L82 74 L82 92 L100 92 L100 80 L112 80 L112 96 L140 96 L140 88 L150 88 L150 96 L168 96 L168 76 L176 76 L176 96 L200 96 L200 84 L210 84 L210 96 L230 96 L230 82 L236 82 L236 96 L480 96 L480 120 L0 120 Z"/>
+          <path d="M236 96 C236 76 252 64 270 64 C288 64 304 76 304 96 Z"/>
+          <path d="M268 64 L270 54 L272 64 Z"/>
+          <path d="M304 96 L304 86 L318 86 L318 96 L330 96 L330 70 L336 70 L336 96 L352 96 L352 88 L364 88 L364 96 L390 96 L390 84 L398 84 L398 96 L420 96 L420 90 L432 90 L432 96 L446 96 L446 78 L452 78 L452 96 L480 96 Z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="over">
+      <span class="eyebrow" id="hero-eyebrow">Bein HaArbayim</span>
+      <h1 id="hero-title">The Tamid of the afternoon</h1>
+      <span class="he" id="hero-he">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</span>
+    </div>
+  </div>
+
+  <div class="stack-lg" style="padding-top:20px">
+    <div class="stack">
+      <div class="meta">
+        <span>Your mishmar <b>Yedayah</b> <span class="he">יְדַעְיָה</span></span>
+        <span>On duty this week <b id="duty-name">…</b></span>
+      </div>
+      <div class="seg" role="group" aria-label="Which Tamid">
+        <button id="seg-morning" aria-pressed="false">Morning</button>
+        <button id="seg-evening" aria-pressed="true">Afternoon</button>
+      </div>
+      <p class="note">Two minutes. One source, one teaching, one question, one thing placed on the altar.</p>
+    </div>
+
+    <div class="card stack" id="tamid-card">
+      <div class="step">
+        <span class="n">א</span>
+        <div class="source">
+          <div class="he" id="t-src-he"></div>
+          <div class="en" id="t-src-en"></div>
+          <div class="ref" id="t-src-ref"></div>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="step">
+        <span class="n">ב</span>
+        <div class="stack" style="gap:10px">
+          <span class="eyebrow">Teaching</span>
+          <p id="t-teach"></p>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="step">
+        <span class="n">ג</span>
+        <div class="stack" style="gap:10px">
+          <span class="eyebrow">The question</span>
+          <p id="t-q" style="font-family:var(--display);font-size:1.25rem;font-weight:500"></p>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="step">
+        <span class="n">ד</span>
+        <div class="stack" style="gap:10px">
+          <label class="eyebrow" for="t-reflect">Place it on the altar</label>
+          <textarea id="t-reflect" placeholder="One line is enough."></textarea>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="btn" id="t-keep">Offer it</button>
+            <span class="note" id="t-kept"></span>
+          </div>
+          <p class="note">Kept on this phone only. Nothing here is shared.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <span class="eyebrow">Why two moments</span>
+      <p>In the Mikdash the whole day was held between two lambs. Nothing was offered before the morning Tamid, and nothing after the Tamid of the afternoon. The Rambam brings this in Hilchot Temidin uMusafin, chapter one. We have no lamb. The frame is still ours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DUCHAN ===================== -->
+<section class="screen" id="s-duchan" hidden>
+  <div class="topbar">
+    <div class="brandmark">Duchan <span class="he">דּוּכָן</span></div>
+    <span class="pill">Birkat Kohanim</span>
+  </div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack">
+      <h2>The blessing you carry</h2>
+      <p>Tap any word. Each one has a plain meaning, a Rashi, and an inner kavana to bring up with you. In Eretz Yisrael the Kohanim bless every morning. In most communities outside Israel, on Yom Tov at Mussaf.</p>
+    </div>
+
+    <div class="card">
+      <div class="verse-wrap" id="verses"></div>
+      <p class="note" style="text-align:center;margin-top:6px">Three words, five words, seven words. Fifteen words. Sixty letters.</p>
+    </div>
+
+    <div class="card kav" id="kav" hidden>
+      <div class="word he" id="kav-word"></div>
+      <div><div class="lab">Plain meaning</div><p id="kav-plain"></p></div>
+      <div><div class="lab" id="kav-src-lab">Rashi</div><p id="kav-src"></p></div>
+      <div><div class="lab">Inner kavana <span style="color:var(--muted);letter-spacing:0;text-transform:none">(draft, for Rabbi Amichai to review)</span></div><p id="kav-inner"></p></div>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Before you go up</summary>
+        <div class="check" id="prep">
+          <label><input type="checkbox" id="p1"><span>Remove your shoes before washing.</span></label>
+          <label><input type="checkbox" id="p2"><span>A Levi pours the water over your hands.</span></label>
+          <label><input type="checkbox" id="p3"><span>Go up to the duchan during Retzeh, before the chazan reaches Modim.</span></label>
+          <label><input type="checkbox" id="p4"><span>Face the aron until the chazan calls "Kohanim," then turn to the people.</span></label>
+          <label><input type="checkbox" id="p5"><span>Say each word only after the chazan reads it.</span></label>
+          <label><input type="checkbox" id="p6"><span>Hands raised, fingers in the form, eyes lowered. The people do not look at your hands, and neither do you.</span></label>
+        </div>
+        <p class="note" style="padding-top:12px">Customs differ between communities. Follow your own rav and your own minhag.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Sixty seconds of kavana</summary>
+        <div class="stack">
+          <p>The verse after the blessing says: <span class="he">וַאֲנִי אֲבָרְכֵם</span>, "and I will bless them." The blessing is not yours. You are the open hand it passes through. The Zohar in Naso teaches that the Shechinah rests upon the hands of the Kohanim while they bless. So before the first word, empty the hands. Nothing to prove, nothing to give from your own store. Then say the Name, and let the blessing go where it is sent.</p>
+          <p class="note">Draft teaching, in Rabbi Amichai's voice, for his review.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MISHMAR ===================== -->
+<section class="screen" id="s-mishmar" hidden>
+  <div class="topbar">
+    <div class="brandmark">Mishmar <span class="he">מִשְׁמָר</span></div>
+    <span class="pill">The 24 watches</span>
+  </div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack">
+      <h2>Every Kohen belongs to a watch</h2>
+      <p>In the Mikdash the Kohanim served in twenty-four mishmarot, listed in Divrei HaYamim I, chapter 24. Each watch came up to Jerusalem for one week, twice a year. Here it works the same way. Every learner joins a mishmar. When your watch is on duty, your circle hosts the week's discussion and receives the live class.</p>
+    </div>
+
+    <div class="stack">
+      <div class="legend"><span class="l-mine">Your mishmar</span><span class="l-duty">On duty this week</span></div>
+      <div class="watches" id="watches"></div>
+      <p class="note">Your mishmar is shown as an example until sign-in exists. The watch on duty rotates by the week of the year.</p>
+    </div>
+
+    <div class="card stack">
+      <span class="eyebrow">This week in <span id="duty-name-2">…</span></span>
+      <div class="thread" id="thread">
+        <div class="msg q">
+          <div class="av">א</div>
+          <div><div class="who">Rabbi Amichai · question for the week</div><p style="font-family:var(--display);font-size:1.15rem;font-weight:500">Where in your week did you act as a Kohen, and nobody knew?</p></div>
+        </div>
+        <div class="msg">
+          <div class="av">E</div>
+          <div><div class="who">Eli · example reply</div><p>Two neighbors were not speaking. I did not fix it. I just kept showing up at both doors. Aharon did not fix things either, from what I understand. He stood between.</p></div>
+        </div>
+        <div class="msg">
+          <div class="av">D</div>
+          <div><div class="who">David · example reply</div><p>My son asked why I leave the room at a funeral. It was the first time I explained the Kehuna to him out loud.</p></div>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <label class="eyebrow" for="m-reply">Add your voice</label>
+      <textarea id="m-reply" placeholder="What did you notice?"></textarea>
+      <div><button class="btn" id="m-send">Share with the watch</button></div>
+      <p class="note">In the working app this goes to your mishmar. In this prototype it stays on your screen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEIT MIDRASH ===================== -->
+<section class="screen" id="s-learn" hidden>
+  <div id="learn-index">
+    <div class="topbar">
+      <div class="brandmark">Beit Midrash <span class="he">בֵּית מִדְרָשׁ</span></div>
+      <span class="pill">Three paths</span>
+    </div>
+    <div class="stack-lg" style="padding-top:10px">
+      <div class="path">
+        <div class="pathhead"><h2>Mishmeret Kehuna</h2><span class="note">30 days</span></div>
+        <p>The Kohen today. What is kept, what is carried, and where the priesthood lives in a week that looks like everyone else's. Each day is one source, one teaching, one question.</p>
+        <div class="lessons" id="path1"></div>
+        <p class="note">Continues through day 30. Days 8 onward are outlined and awaiting recording.</p>
+      </div>
+      <div class="path">
+        <div class="pathhead"><h2>Rambam, Hilchot Beit HaBechira</h2><span class="note">8 chapters · audio</span></div>
+        <p>The laws of the Temple, chapter by chapter, with Rabbi Amichai. Seven chapters are already recorded from the original Kehuna Academy.</p>
+        <div class="lessons" id="path2"></div>
+      </div>
+      <div class="path">
+        <div class="pathhead"><h2>The Inner Kehuna</h2><span class="note">3 sessions</span></div>
+        <p>Hod, Shalom, and the Kohen who owns no land. Drawn from Rabbi Amichai's conversation with Eli on the inner meaning of the priesthood.</p>
+        <div class="lessons" id="path3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="learn-lesson" hidden>
+    <div class="topbar">
+      <div class="brandmark">Mishmeret Kehuna</div>
+      <span class="pill">Day 1 of 30</span>
+    </div>
+    <div class="stack-lg" style="padding-top:10px">
+      <div class="stack">
+        <span class="eyebrow">Day one</span>
+        <h2>You and your sons: what is kept</h2>
+      </div>
+      <div class="card stack">
+        <div class="source">
+          <div class="he">וְאַתָּה וּבָנֶיךָ אִתְּךָ תִּשְׁמְרוּ אֶת־כְּהֻנַּתְכֶם</div>
+          <div class="en">"And you and your sons with you shall keep your priesthood."</div>
+          <div class="ref">Bamidbar 18:7</div>
+        </div>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">Teaching</span>
+        <p>The verse does not say you inherited your priesthood. It says you shall keep it. Tishmeru. The same root as mishmeret, a watch. A Kohen receives the Kehuna by birth, and there is nothing to do about that. A kept Kehuna is something else. It is a priesthood that someone is actually watching over, the way a guard watches a gate at night.</p>
+        <p>So the question this whole path is asking is simple. What does it look like to keep a priesthood in a year with no Mikdash, no korbanot, and a day that looks like everyone else's? We are going to answer it one piece at a time. Today, only notice this: you were given something to keep.</p>
+        <p class="note">Draft, in Rabbi Amichai's voice, for his review before it is published.</p>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">The question</span>
+        <p style="font-family:var(--display);font-size:1.25rem;font-weight:500">Where in your ordinary week are you already standing watch, without calling it that?</p>
+      </div>
+      <div class="card stack">
+        <label class="eyebrow" for="l-reflect">Reflect</label>
+        <textarea id="l-reflect" placeholder="Write freely. This stays on your phone."></textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn" id="l-keep">Keep it</button>
+          <button class="btn ghost" id="l-ask">Ask about this source</button>
+        </div>
+      </div>
+      <button class="back" id="l-back">← Back to the Beit Midrash</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ASK ===================== -->
+<section class="screen" id="s-ask" hidden>
+  <div class="topbar">
+    <div class="brandmark">Ask <span class="he">שְׁאַל</span></div>
+    <span class="pill">Study companion</span>
+  </div>
+  <div class="stack-lg" style="padding-top:10px">
+    <div class="stack">
+      <p>A companion for study, grounded in the Rambam, the sources of this Beit Midrash, and Rabbi Amichai's recorded teaching. It shows its sources. It does not decide halacha for your situation. For that, ask your rav.</p>
+      <div class="status" id="ask-status"><span class="dot"></span><span>Checking whether live answers are available…</span></div>
+    </div>
+    <div class="chips" id="chips">
+      <button data-q="Why does the Kohen not own land?">Why does the Kohen own no land?</button>
+      <button data-q="What is the structure of Birkat Kohanim, and why three verses?">The structure of Birkat Kohanim</button>
+      <button data-q="What is the general rule about a Kohen and a cemetery?">A Kohen and the cemetery</button>
+      <button data-q="What is Hod and how does it connect to the Kohanim?">Hod and the Kohanim</button>
+    </div>
+    <div class="chat" id="chat">
+      <div class="bubble user">Why does the Kohen not own land?</div>
+      <div class="bubble ai">Because G-d Himself is the Kohen's portion. When the land is divided, Aharon is told: <span class="he">אֲנִי חֶלְקְךָ וְנַחֲלָתְךָ</span>, "I am your portion and your inheritance among the children of Israel." The Rambam explains that the tribe of Levi was set apart to serve G-d and to teach His ways, and so it was freed from the ordinary wars and labors of the land. Then he adds a remarkable line: not only Levi, but any person in the world whose spirit moves him to set himself apart to stand before G-d and serve Him becomes holy of holies, and G-d becomes his portion. In Rabbi Amichai's conversation with Eli, this is why people could trust the Kohen with their impurity. A man who owns nothing is not a threat to anyone. He can stand between.
+        <span class="src">Bamidbar 18:20 · Devarim 18:1–2 · Rambam, Shemitah veYovel 13:12–13 · Live Kabbalah, "The Kehuna: Priesthood, Hod and the work of Shalom" (May 2025)</span>
+      </div>
+    </div>
+    <div class="composer">
+      <textarea id="ask-input" placeholder="Ask about the Kehuna…" rows="1"></textarea>
+      <button class="btn" id="ask-send">Ask</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<nav class="tabbar" aria-label="Sections">
+  <div class="inner">
+    <button data-tab="tamid" aria-current="page"><span class="he">תמיד</span>Tamid</button>
+    <button data-tab="duchan"><span class="he">דוכן</span>Duchan</button>
+    <button data-tab="mishmar"><span class="he">משמר</span>Mishmar</button>
+    <button data-tab="learn"><span class="he">בית מדרש</span>Learn</button>
+    <button data-tab="ask"><span class="he">שאל</span>Ask</button>
+  </div>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var store = {
+    get: function(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set: function(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  };
+  function toast(msg){ var t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove('show');},1800); }
+
+  /* ---------- Tabs ---------- */
+  var tabs = ['tamid','duchan','mishmar','learn','ask'];
+  function showTab(name){
+    tabs.forEach(function(t){ $('s-'+t).hidden = (t!==name); });
+    document.querySelectorAll('.tabbar button').forEach(function(b){
+      if (b.dataset.tab===name) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current');
+    });
+    window.scrollTo(0,0);
+    store.set('mm.tab', name);
+  }
+  document.querySelectorAll('.tabbar button').forEach(function(b){ b.addEventListener('click', function(){ showTab(b.dataset.tab); }); });
+  var hash = (location.hash||'').replace('#','');
+  showTab(tabs.indexOf(hash)>=0 ? hash : (tabs.indexOf(store.get('mm.tab'))>=0 ? store.get('mm.tab') : 'tamid'));
+
+  /* ---------- The 24 watches ---------- */
+  var WATCHES = [
+    ['Yehoyariv','יְהוֹיָרִיב'],['Yedayah','יְדַעְיָה'],['Charim','חָרִם'],['Se\u2019orim','שְׂעֹרִים'],
+    ['Malkiyah','מַלְכִּיָּה'],['Miyamin','מִיָּמִן'],['Hakotz','הַקּוֹץ'],['Aviyah','אֲבִיָּה'],
+    ['Yeshua','יֵשׁוּעַ'],['Shechanyahu','שְׁכַנְיָהוּ'],['Elyashiv','אֶלְיָשִׁיב'],['Yakim','יָקִים'],
+    ['Chupah','חֻפָּה'],['Yeshevav','יֶשֶׁבְאָב'],['Bilgah','בִּלְגָּה'],['Imer','אִמֵּר'],
+    ['Chezir','חֵזִיר'],['Hapitzetz','הַפִּצֵּץ'],['Petachyah','פְּתַחְיָה'],['Yechezkel','יְחֶזְקֵאל'],
+    ['Yachin','יָכִין'],['Gamul','גָּמוּל'],['Delayahu','דְּלָיָהוּ'],['Ma\u2019azyahu','מַעַזְיָהוּ']
+  ];
+  function isoWeek(d){
+    var date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    var day = date.getUTCDay() || 7;
+    date.setUTCDate(date.getUTCDate() + 4 - day);
+    var yearStart = new Date(Date.UTC(date.getUTCFullYear(),0,1));
+    return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+  }
+  var MINE = 1;
+  var DUTY = (isoWeek(new Date()) - 1) % 24;
+  $('duty-name').textContent = WATCHES[DUTY][0];
+  $('duty-name-2').textContent = WATCHES[DUTY][0];
+  var wl = $('watches');
+  WATCHES.forEach(function(w,i){
+    var d = document.createElement('div');
+    d.className = 'watch' + (i===MINE?' mine':'') + (i===DUTY?' duty':'');
+    d.innerHTML = '<span class="num">'+(i+1)+'</span><span>'+w[0]+'</span><span class="he">'+w[1]+'</span>';
+    wl.appendChild(d);
+  });
+
+  /* ---------- Tamid ---------- */
+  var TAMID = {
+    morning: {
+      eyebrow:'Boker', title:'The Tamid of the morning', he:'תָּמִיד שֶׁל שַׁחַר',
+      srcHe:'אֶת־הַכֶּבֶשׂ אֶחָד תַּעֲשֶׂה בַבֹּקֶר וְאֵת הַכֶּבֶשׂ הַשֵּׁנִי תַּעֲשֶׂה בֵּין הָעַרְבָּיִם',
+      srcEn:'"The one lamb you shall offer in the morning, and the second lamb you shall offer at bein ha\u2019arbayim."',
+      srcRef:'Bamidbar 28:4',
+      teach:'The day in the Mikdash did not begin with whatever came first. It began with the Tamid. Before any private offering, before any request, the Kohen gave something that was not about him. That is the whole teaching of the morning Tamid, and it is small enough to do. Before the phone, before the emails, before the day takes you, place one thing first. Not a big thing. A constant one. Tamid means constant.',
+      q:'What is the one thing you will offer first this morning, before anything asks you for something?'
+    },
+    evening: {
+      eyebrow:'Bein HaArbayim', title:'The Tamid of the afternoon', he:'תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם',
+      srcHe:'תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ מַשְׂאַת כַּפַּי מִנְחַת־עָרֶב',
+      srcEn:'"Let my prayer be set before You as incense, the lifting of my hands as the evening offering."',
+      srcRef:'Tehillim 141:2',
+      teach:'Bein ha\u2019arbayim. Between the evenings. The light has not gone, but it is going. Our sages teach that Minchah was set to correspond to the Tamid of the afternoon. This is the hour that is hardest to give, because the day has already spent us. David asks that the lifting of his hands be received like the evening offering. For a Kohen, lifted hands are not a metaphor. Take one minute at the window while the light changes. Ask what the day took, and what is still yours to give.',
+      q:'What is still yours to give, now, at the end of the day?'
+    }
+  };
+  var mode = (new Date().getHours() < 13) ? 'morning' : 'evening';
+  function renderTamid(m){
+    mode = m; var t = TAMID[m];
+    $('hero').className = 'hero ' + m;
+    $('hero-eyebrow').textContent = t.eyebrow; $('hero-title').textContent = t.title; $('hero-he').textContent = t.he;
+    $('t-src-he').textContent = t.srcHe; $('t-src-en').textContent = t.srcEn; $('t-src-ref').textContent = t.srcRef;
+    $('t-teach').textContent = t.teach; $('t-q').textContent = t.q;
+    $('seg-morning').setAttribute('aria-pressed', m==='morning'); $('seg-evening').setAttribute('aria-pressed', m==='evening');
+    var key = 'mm.tamid.'+m+'.'+new Date().toDateString();
+    var saved = store.get(key); $('t-reflect').value = saved || '';
+    $('t-kept').textContent = saved ? 'Offered today.' : '';
+  }
+  $('seg-morning').addEventListener('click', function(){ renderTamid('morning'); });
+  $('seg-evening').addEventListener('click', function(){ renderTamid('evening'); });
+  $('t-keep').addEventListener('click', function(){
+    var v = $('t-reflect').value.trim(); if(!v){ toast('Write one line first.'); return; }
+    store.set('mm.tamid.'+mode+'.'+new Date().toDateString(), v);
+    var days = parseInt(store.get('mm.days')||'0',10); var last = store.get('mm.lastday');
+    if (last !== new Date().toDateString()){ days += 1; store.set('mm.days', String(days)); store.set('mm.lastday', new Date().toDateString()); }
+    $('t-kept').textContent = 'Offered. Day ' + days + ' of your watch.';
+    toast('Offered.');
+  });
+  renderTamid(mode);
+
+  /* ---------- Duchan ---------- */
+  var VERSES = [
+    { count:'3 words', words:[
+      ['יְבָרֶכְךָ','May He bless you.','That your possessions be blessed.','Blessing begins in the material. G-d does not bless an idea. He blesses your actual life, the one with bills and children and a body. If the blessing is for something that real, then the Kohen has to mean something that real when he says it.'],
+      ['יְיָ','The Name of mercy.','The Kohanim bless with the explicit Name in the Mikdash; outside it, with the Name as it is read.','You say the Name, but the blessing is His. "And I will bless them." Your job here is not to be the source. It is to be an open hand that does not close around what passes through it.', 'Mishnah Sotah 7:6'],
+      ['וְיִשְׁמְרֶךָ','And guard you.','That thieves should not come and take your possessions. A person who gives a gift to his servant cannot guard it for him from everyone. The Holy One both gives and guards.','Shamar is the root of mishmeret. What you receive needs keeping. So the first verse already holds the whole path: to be given something, and to stand watch over it.']
+    ]},
+    { count:'5 words', words:[
+      ['יָאֵר','May He shine.','He will show you a smiling face, a shining face.','The light of a face is the feeling of being seen with warmth. Every person you bless has been looked at coldly this week. Here you are asking for the opposite.'],
+      ['יְיָ','The Name.','','The Name appears in each of the three verses. Chesed, then light, then peace. The same G-d, three ways of turning toward a person.', ''],
+      ['פָּנָיו','His face.','','Panim and pnim share their letters, face and inside. When a face shines, what is inside is showing. This is wordplay, not etymology, and it still teaches.', ''],
+      ['אֵלֶיךָ','Toward you.','','Not a general light. A light aimed at one person. When you say this word, there is someone in front of you it is aimed at.', ''],
+      ['וִיחֻנֶּךָּ','And be gracious to you.','He will give you grace.','Chen is being received before you have earned it. Most of us are still trying to earn it. This word says: stop for a moment, and be received.']
+    ]},
+    { count:'7 words', words:[
+      ['יִשָּׂא','May He lift.','He will hold back His anger.','To lift a face is to look up at someone again after a rupture. This is the blessing for whoever in the room is carrying a broken relationship, with a person or with G-d.'],
+      ['יְיָ','The Name.','','The third time. By now the Kohen has said the Name three times with the same hands raised. Notice whether it is still alive in your mouth.', ''],
+      ['פָּנָיו','His face.','','A face that was turned away is turning back. That is what the whole third verse is about.', ''],
+      ['אֵלֶיךָ','Toward you.','','Again, aimed. Someone specific.', ''],
+      ['וְיָשֵׂם','And place.','','Shalom is set down deliberately, like a vessel placed on a table. It does not float in. Someone puts it there.', ''],
+      ['לְךָ','For you.','','Not for the people in general. For you. The Kohen blesses a crowd, and the Torah keeps saying you, singular.', ''],
+      ['שָׁלוֹם','Peace.','"The Holy One found no vessel that holds blessing for Israel except peace."','Everything before this word needs a vessel. Shalom is the vessel. It is no accident that Aharon, who loved peace and pursued it, is the one who blesses. The Kohen ends where his whole avodah lives.', 'Mishnah Uktzin 3:12']
+    ]}
+  ];
+  var vw = $('verses'); var current = null;
+  VERSES.forEach(function(v, vi){
+    var row = document.createElement('div'); row.className='verse-row';
+    var c = document.createElement('span'); c.className='count'; c.textContent=v.count;
+    var line = document.createElement('div'); line.className='verse';
+    v.words.forEach(function(w, wi){
+      var b = document.createElement('button'); b.textContent = w[0]; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.verse button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        $('kav').hidden = false;
+        $('kav-word').textContent = w[0]; $('kav-plain').textContent = w[1];
+        var srcLab = w[4]===undefined ? 'Rashi' : (w[4] || 'Source');
+        $('kav-src-lab').textContent = w[2] ? srcLab : 'Source';
+        $('kav-src').textContent = w[2] || 'No separate gloss on this word. The kavana below carries it.';
+        $('kav-inner').textContent = w[3];
+        $('kav').scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+      line.appendChild(b);
+    });
+    row.appendChild(line); row.appendChild(c);
+    vw.appendChild(row);
+  });
+
+  /* ---------- Mishmar thread ---------- */
+  $('m-send').addEventListener('click', function(){
+    var v = $('m-reply').value.trim(); if(!v){ toast('Write something first.'); return; }
+    var d = document.createElement('div'); d.className='msg';
+    d.innerHTML = '<div class="av">You</div><div><div class="who">You · just now</div><p></p></div>';
+    d.querySelector('p').textContent = v;
+    $('thread').appendChild(d); $('m-reply').value=''; toast('Shared with your watch (on this screen only).');
+  });
+
+  /* ---------- Beit Midrash ---------- */
+  var PATH1 = ['You and your sons: what is kept','The blessing you carry','The cemetery and the boundary of life','Whom a Kohen marries','Pidyon HaBen: the firstborn and the Kohen','Twenty-four gifts, then and now','Aharon: loving peace, pursuing peace'];
+  var PATH2 = ['The Mikdash as a mitzvah, and its place','The vessels: the Aron, the Menorah, the Shulchan','The Mizbeach and its measures','The courtyards and the chambers','The gates and the walls','Kedushah of the Mikdash and Jerusalem','Rings, tables, and the order of the courtyard','The watches and the guarding of the Mikdash'];
+  var PATH3 = ['Hod and the Kohen','The one who owns no land','Shalom as avodah'];
+  function fillPath(el, items, tag, openFirst){
+    items.forEach(function(t,i){
+      var b = document.createElement(openFirst && i===0 ? 'button' : 'div');
+      b.className = 'row';
+      b.innerHTML = '<span class="d">'+(i+1)+'</span><span class="t"></span><span class="tag"></span>';
+      b.querySelector('.t').textContent = t;
+      b.querySelector('.tag').textContent = (typeof tag==='function') ? tag(i) : tag;
+      if (openFirst && i===0){ b.className=''; b.addEventListener('click', openLesson); }
+      el.appendChild(b);
+    });
+  }
+  fillPath($('path1'), PATH1, function(i){ return i===0 ? 'Open' : 'Outlined'; }, true);
+  fillPath($('path2'), PATH2, function(i){ return i<7 ? 'Audio' : 'To record'; }, false);
+  fillPath($('path3'), PATH3, 'From class', false);
+  function openLesson(){ $('learn-index').hidden=true; $('learn-lesson').hidden=false; window.scrollTo(0,0); $('l-reflect').value = store.get('mm.lesson1')||''; }
+  $('l-back').addEventListener('click', function(){ $('learn-lesson').hidden=true; $('learn-index').hidden=false; window.scrollTo(0,0); });
+  $('l-keep').addEventListener('click', function(){ store.set('mm.lesson1', $('l-reflect').value); toast('Kept on this phone.'); });
+  $('l-ask').addEventListener('click', function(){ showTab('ask'); $('ask-input').value = 'What does "tishmeru et kehunatchem" (Bamidbar 18:7) mean, and how do the commentaries read the word "keep"?'; $('ask-input').focus(); });
+
+  /* ---------- Ask ---------- */
+  var RULES = 'You are the study companion inside Mishmeret, a learning community for Kohanim created by Rabbi Amichai Cohen of Live Kabbalah. Answer only questions about the Kehuna: the Kohanim, Birkat Kohanim, the Beit HaMikdash and its avodah, the Rambam\u2019s Hilchot Beit HaBechira and related laws, and the inner meaning of the priesthood in Chassidus and Kabbalah. Ground every answer in named sources (a Torah verse with chapter and verse, Mishnah, Talmud, Rambam with the name of the halachot and chapter, Zohar, Tanya) and name them inline in the prose. Distinguish clearly between plain meaning, halacha, commentary, and inner teaching. Never rule on a personal halachic question. If a question is practical and personal (may I attend this funeral, may I marry this person, what should I do), state the general principle in one or two sentences and tell the person to bring the actual case to their rav. If you are not sure of a source, say so plainly rather than inventing one. Write G-d with a hyphen. Do not use contractions. No bullet lists, no headings. Warm, plain, grounded prose, at most 170 words. Finish with one line beginning "Sources:" listing what you drew on. If the question is outside the Kehuna, say gently that this companion only studies the Kehuna and offer one related direction.';
+  var PREPARED = [
+    { k:/land|portion|inherit|nachal/i, a:'Because G-d Himself is the Kohen\u2019s portion. Aharon is told, "I am your portion and your inheritance among the children of Israel" (Bamidbar 18:20), and Devarim 18:1\u20132 repeats it for the whole tribe. The Rambam explains (Shemitah veYovel 13:12) that Levi was set apart to serve G-d and to teach His ways, and so was freed from the wars and labors of the land, and then adds (13:13) that anyone whose spirit moves him to set himself apart to stand before G-d becomes holy of holies, and G-d becomes his portion. In the inner reading, a man who owns nothing is not a threat, so people can bring him what they are ashamed of.\nSources: Bamidbar 18:20; Devarim 18:1\u20132; Rambam, Shemitah veYovel 13:12\u201313; Live Kabbalah, "The Kehuna" (May 2025).' },
+    { k:/birkat|bless|duchan|verse/i, a:'Birkat Kohanim is three verses (Bamidbar 6:24\u201326) of three, five and seven words, fifteen words and sixty letters in all. The first asks for blessing and its keeping; Rashi reads it as material blessing and protection from loss. The second asks for the light of G-d\u2019s face and for grace. The third asks that G-d lift His face, which Rashi reads as holding back anger, and that He place peace. The Mishnah at the end of Uktzin says G-d found no vessel to hold blessing except peace, which is why the blessing ends there. The verse after, "and I will bless them," makes clear the Kohen is the channel and not the source.\nSources: Bamidbar 6:22\u201327; Rashi there; Mishnah Uktzin 3:12; Mishnah Sotah 7:6.' },
+    { k:/cemeter|grave|dead|funeral|tum/i, a:'The general principle is in Vayikra 21:1\u20134. A Kohen may not make himself impure through contact with the dead, except for his seven close relatives: father, mother, son, daughter, brother, unmarried sister, and wife. The Rambam sets this out in Hilchot Avel, chapter 3. Impurity comes through touching, carrying, or being under one roof with the dead, so a Kohen keeps a distance from graves and does not enter a cemetery. Questions about a specific funeral, a hospital, or the grave of a tzaddik have real differences of opinion, and your rav should decide the actual case.\nSources: Vayikra 21:1\u20134; Rambam, Hilchot Avel 3:1\u20133; Rambam, Tumat Met 1:1.' },
+    { k:/hod|sefir|inner|shalom|aharon|peace/i, a:'In the Kabbalah, Aharon and the Kohanim are aligned with Hod, the sefirah of acknowledgment and surrender, the place where a person bows. Aharon is the one who "loved peace and pursued peace" (Avot 1:12), and the blessing he gives ends in shalom. In Rabbi Amichai\u2019s conversation with Eli, the two ideas meet: the Kohen\u2019s power is not force but bitul. He owns no land, he pursues no advantage, and so he can stand between two people who are not speaking. That standing between is the avodah of Hod, and it is available to a Kohen today without a Mikdash.\nSources: Avot 1:12; Bamidbar 6:26; Live Kabbalah, "The Kehuna: Priesthood, Hod and the work of Shalom" (May 2025). The mapping of Aharon to Hod is standard in Kabbalistic literature; ask for a specific citation if you need one.' }
+  ];
+  var turns = [];
+  var sampleFn = null;
+  var statusEl = $('ask-status');
+  function setStatus(live, text){ statusEl.className = 'status' + (live?' live':''); statusEl.querySelector('span:last-child').textContent = text; }
+  (function(){
+    if (!window.claude || typeof window.claude.use !== 'function'){ setStatus(false, 'Prepared answers only in this preview. The working app answers live from the sources.'); return; }
+    window.claude.use('sample').then(function(s){
+      if (s){ sampleFn = s; setStatus(true, 'Live. Answers are written from the sources as you ask.'); }
+      else setStatus(false, 'Prepared answers only in this preview. The working app answers live from the sources.');
+    }).catch(function(){ setStatus(false, 'Prepared answers only in this preview.'); });
+  })();
+  function addBubble(cls, text){
+    var d = document.createElement('div'); d.className = 'bubble ' + cls; d.textContent = text; $('chat').appendChild(d); return d;
+  }
+  function renderAnswer(el, text){
+    var i = text.lastIndexOf('Sources:');
+    if (i > 0){ el.textContent = text.slice(0,i).trim(); var s=document.createElement('span'); s.className='src'; s.textContent=text.slice(i).trim(); el.appendChild(s); }
+    else el.textContent = text;
+  }
+  var busy = false;
+  function ask(q){
+    if (busy) return; q = (q||'').trim(); if(!q){ toast('Type a question first.'); return; }
+    addBubble('user', q); $('ask-input').value='';
+    var el = addBubble('ai', 'Thinking\u2026'); el.scrollIntoView({behavior:'smooth', block:'end'});
+    if (sampleFn){
+      busy = true;
+      turns.push({role:'user', content:q});
+      if (turns.length > 8) turns = turns.slice(-8);
+      sampleFn([{role:'user', content:RULES}].concat(turns), { cache:false, onText:function(ev){ renderAnswer(el, ev.text); } })
+        .then(function(r){ renderAnswer(el, r.text); turns.push({role:'assistant', content:r.text}); })
+        .catch(function(e){
+          if (e && e.text){ renderAnswer(el, e.text); }
+          else if (e && e.code==='not_granted'){ el.textContent = 'Live answers were not allowed on this device. Here is a prepared answer instead.'; setTimeout(function(){ prepared(q, addBubble('ai','')); }, 300); sampleFn=null; setStatus(false,'Prepared answers only.'); }
+          else if (e && e.code==='rate_limited'){ el.textContent = 'Too many questions for the moment. Please wait a little and ask again.'; }
+          else { el.textContent = 'The companion could not answer just now. Please try again.'; }
+        })
+        .then(function(){ busy=false; el.scrollIntoView({behavior:'smooth', block:'end'}); });
+    } else {
+      setTimeout(function(){ prepared(q, el); el.scrollIntoView({behavior:'smooth', block:'end'}); }, 350);
+    }
+  }
+  function prepared(q, el){
+    for (var i=0;i<PREPARED.length;i++){ if (PREPARED[i].k.test(q)){ renderAnswer(el, PREPARED[i].a); return; } }
+    el.textContent = 'This preview holds a few prepared answers: the Kohen\u2019s portion, Birkat Kohanim, the cemetery, and Hod. The working app searches the Rambam and Rabbi Amichai\u2019s teaching for any question about the Kehuna.';
+  }
+  $('ask-send').addEventListener('click', function(){ ask($('ask-input').value); });
+  $('ask-input').addEventListener('keydown', function(e){ if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); ask($('ask-input').value); } });
+  document.querySelectorAll('#chips button').forEach(function(b){ b.addEventListener('click', function(){ ask(b.dataset.q); }); });
+})();
+</script>
