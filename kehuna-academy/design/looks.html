@@ -1,0 +1,225 @@
+<title>Mishmeret Looks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Frank+Ruhl+Libre:wght@300;400;500;700&family=David+Libre:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+Hebrew:wght@400;600&family=Heebo:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=Cinzel:wght@500;600&display=swap">
+<style>
+:root{--bg:#F4F0E8;--ink:#23262F;--muted:#6E6759;--line:#DDD5C4;--surface:#FBF8F2;--accent:#A9802A;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#15182A;--ink:#EDE5D3;--muted:#A79F8D;--line:#333A5C;--surface:#1D2238;--accent:#D6AE58}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#15182A;--ink:#EDE5D3;--muted:#A79F8D;--line:#333A5C;--surface:#1D2238;--accent:#D6AE58}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.55}
+*{box-sizing:border-box}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px;padding-block:28px 60px}
+h1{font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;margin:0 0 6px;line-height:1.1}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 30px}
+.look{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start;padding-block:34px;border-top:1px solid var(--line)}
+@media (max-width:760px){.look{grid-template-columns:1fr}}
+.num{font-family:"Cormorant Garamond",serif;color:var(--accent);font-size:1rem;letter-spacing:.14em;text-transform:uppercase}
+.look h2{font-family:"Cormorant Garamond",serif;font-size:1.9rem;margin:2px 0 8px;font-weight:600;line-height:1.1}
+.look p{margin:0 0 12px;max-width:62ch}
+.sw{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.sw span{display:flex;flex-direction:column;gap:4px;font-size:.72rem;color:var(--muted);font-family:"Manrope",sans-serif}
+.sw i{display:block;width:44px;height:44px;border-radius:10px;border:1px solid rgba(0,0,0,.08)}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:.92rem;margin-top:8px}
+.kv b{color:var(--muted);font-weight:500;font-family:"Manrope",sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+/* phone frame */
+.phone{width:320px;height:660px;border-radius:38px;border:1px solid rgba(0,0,0,.18);box-shadow:0 30px 60px -30px rgba(20,20,40,.45),0 0 0 8px rgba(0,0,0,.06);overflow:hidden;position:relative;margin:0 auto;font-size:13.5px;line-height:1.45}
+.phone .scr{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column}
+.phone .body{flex:1;overflow:hidden;padding:0 16px}
+.tb{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 6px;font-weight:600}
+.pill{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;opacity:.7;border-radius:999px;padding:3px 8px}
+.hero{position:relative;margin:0 -16px;overflow:hidden}
+.hero .t{position:absolute;left:16px;right:16px;top:18px}
+.ey{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.h1{font-size:1.55rem;line-height:1.1;font-weight:600;margin:4px 0 2px}
+.he{direction:rtl;unicode-bidi:isolate}
+.meta{display:flex;gap:14px;font-size:.72rem;opacity:.75;margin:14px 0 10px}
+.card{border-radius:14px;padding:14px}
+.src-he{font-size:1.15rem;line-height:1.6;font-weight:500}
+.src-en{font-style:italic;opacity:.75;font-size:.85rem;margin-top:4px}
+.ref{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
+.teach{font-size:.82rem;margin-top:10px;opacity:.92}
+.q{font-size:1rem;margin-top:10px;font-weight:500;line-height:1.3}
+.btn{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:999px;font-size:.75rem;font-weight:600}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(0,0,0,.08);padding:8px 0 10px;font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.tabs .he{display:block;font-size:.9rem;text-transform:none;letter-spacing:0;margin-bottom:2px}
+/* 1 Bein HaArbayim */
+.p1{background:#ECE4D4;color:#23262F;font-family:"Frank Ruhl Libre",serif}
+.p1 .tb{font-family:"Cormorant Garamond",serif;font-size:1.05rem}
+.p1 .hero{height:190px;background:linear-gradient(180deg,#252B52 0%,#8A5E86 52%,#E8A25E 100%);color:#F6EEDC}
+.p1 .hero .sun{position:absolute;left:50%;top:104px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle,#FFF3D2,#F7CF86 55%,rgba(247,207,134,0) 72%)}
+.p1 .hero svg{position:absolute;bottom:-1px;left:0;width:100%}
+.p1 .h1{font-family:"Cormorant Garamond",serif}
+.p1 .card{background:#F7F2E8;border:1px solid #D5CAB3}
+.p1 .ref{color:#A9802A} .p1 .q{font-family:"Cormorant Garamond",serif;font-size:1.1rem}
+.p1 .btn{background:#23262F;color:#ECE4D4}
+.p1 .tabs{background:#F7F2E8;color:#6E6759} .p1 .tabs .on{color:#A9802A}
+/* 2 Jerusalem Stone */
+.p2{background:#F6F2EA;color:#1E1C19;font-family:"Newsreader",serif}
+.p2 .tb{font-family:"Newsreader",serif;font-size:1.05rem;letter-spacing:.01em}
+.p2 .hero{height:150px;background:#F6F2EA;border-bottom:1px solid #1E1C19}
+.p2 .hero .t{top:22px}
+.p2 .ey{color:#8A5A2B;opacity:1}
+.p2 .h1{font-family:"Newsreader",serif;font-size:1.8rem;font-weight:500;font-style:italic}
+.p2 .src-he{font-family:"David Libre",serif;font-size:1.25rem}
+.p2 .card{background:transparent;border-top:1px solid #1E1C19;border-radius:0;padding:12px 0}
+.p2 .ref{color:#8A5A2B} .p2 .q{font-style:italic;font-weight:400;font-size:1.05rem}
+.p2 .btn{background:transparent;border:1px solid #1E1C19;color:#1E1C19;border-radius:0;padding:8px 16px}
+.p2 .tabs{border-top:1px solid #1E1C19;color:#6C665C;font-family:"Manrope",sans-serif} .p2 .tabs .on{color:#8A5A2B}
+/* 3 Night Watch */
+.p3{background:#0F1222;color:#EDE5D3;font-family:"Frank Ruhl Libre",serif}
+.p3 .tb{font-family:"Cinzel",serif;font-size:.9rem;letter-spacing:.12em;color:#D6AE58}
+.p3 .hero{height:190px;background:radial-gradient(ellipse at 50% 120%,#3A2E5B 0%,#0F1222 65%)}
+.p3 .hero .ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px}
+.p3 .hero .t{top:18px;text-align:center}
+.p3 .ey{color:#D6AE58;opacity:1}
+.p3 .h1{font-family:"Cormorant Garamond",serif;color:#F1D89A}
+.p3 .card{background:#171B30;border:1px solid #2A3052}
+.p3 .ref{color:#D6AE58} .p3 .q{font-family:"Cormorant Garamond",serif;font-size:1.1rem;color:#F1D89A}
+.p3 .btn{background:#D6AE58;color:#171B30}
+.p3 .tabs{background:#0B0E1B;border-top:1px solid #2A3052;color:#8B8A9C} .p3 .tabs .on{color:#D6AE58}
+/* 4 Techelet */
+.p4{background:#FBFAF6;color:#14213D;font-family:"Noto Serif Hebrew","Newsreader",serif}
+.p4 .tb{font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:#14213D}
+.p4 .hero{height:170px;background:#1F3A8A;color:#FBFAF6}
+.p4 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,#C9A24A 0 24px,#8B1E3F 24px 48px,#1F3A8A 48px 60px)}
+.p4 .hero .t{top:20px}
+.p4 .ey{color:#C9A24A;opacity:1}
+.p4 .h1{font-family:"Cormorant Garamond",serif}
+.p4 .card{background:#FFFFFF;border:1px solid #E3E0D5;border-left:4px solid #1F3A8A}
+.p4 .ref{color:#8B1E3F} .p4 .q{font-family:"Cormorant Garamond",serif;font-size:1.1rem;color:#1F3A8A}
+.p4 .btn{background:#1F3A8A;color:#FBFAF6}
+.p4 .tabs{background:#FFFFFF;color:#7A7F92} .p4 .tabs .on{color:#1F3A8A}
+/* 5 Dawn */
+.p5{background:#FFFDF9;color:#2A2622;font-family:"Heebo","Manrope",sans-serif}
+.p5 .tb{font-family:"Manrope",sans-serif;font-size:1rem;font-weight:700;letter-spacing:-.01em}
+.p5 .hero{height:170px;background:#FFFDF9}
+.p5 .hero .blob{position:absolute;left:-40px;top:-60px;width:360px;height:260px;border-radius:50%;background:radial-gradient(circle at 50% 60%,#FFD9A0 0%,#FFB37A 40%,rgba(255,179,122,0) 70%);opacity:.85}
+.p5 .hero .t{top:26px}
+.p5 .ey{color:#B8652A;opacity:1;font-family:"Manrope",sans-serif}
+.p5 .h1{font-family:"Manrope",sans-serif;font-weight:700;letter-spacing:-.02em;font-size:1.6rem}
+.p5 .card{background:#FFFFFF;border:1px solid #F0E6D8;border-radius:20px;box-shadow:0 8px 24px -16px rgba(120,80,30,.25)}
+.p5 .src-he{font-family:"Heebo",sans-serif;font-weight:500}
+.p5 .ref{color:#B8652A;font-family:"Manrope",sans-serif} .p5 .q{font-family:"Manrope",sans-serif;font-weight:600;font-size:.98rem}
+.p5 .btn{background:#B8652A;color:#FFFDF9;border-radius:12px;font-family:"Manrope",sans-serif}
+.p5 .tabs{background:#FFFFFF;color:#9A9188;font-family:"Manrope",sans-serif} .p5 .tabs .on{color:#B8652A}
+.p5 .tabs .he{font-family:"Heebo",sans-serif}
+.pick{margin-top:40px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.pick h3{margin:0 0 8px;font-family:"Cormorant Garamond",serif;font-size:1.5rem}
+</style>
+<div class="wrap">
+  <h1>Five looks for Mishmeret</h1>
+  <p class="lede">The same Tamid screen, dressed five ways. Each look changes the palette, the type, and the hero, and keeps the structure you already have. Scroll, then tell me a number, or a mix: "the type of two with the colors of three."</p>
+
+  <!-- 1 -->
+  <section class="look">
+    <div class="phone p1"><div class="scr">
+      <div class="tb"><span>Mishmeret <span class="he" style="font-weight:400;opacity:.7">מִשְׁמֶרֶת</span></span><span class="pill">You</span></div>
+      <div class="body">
+        <div class="hero"><div class="sun"></div>
+          <svg viewBox="0 0 480 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#2A2C45" opacity=".55" d="M0 78 L60 62 L120 70 L180 52 L240 60 L300 44 L360 58 L420 50 L480 64 L480 120 L0 120 Z"/><g fill="#2A2C45"><path d="M0 96 L40 96 L40 84 L52 84 L52 92 L70 92 L70 74 L82 74 L82 92 L100 92 L100 80 L112 80 L112 96 L140 96 L140 88 L150 88 L150 96 L168 96 L168 76 L176 76 L176 96 L200 96 L200 84 L210 84 L210 96 L230 96 L230 82 L236 82 L236 96 L480 96 L480 120 L0 120 Z"/><path d="M236 96 C236 76 252 64 270 64 C288 64 304 76 304 96 Z"/><path d="M304 96 L304 86 L318 86 L318 96 L330 96 L330 70 L336 70 L336 96 L352 96 L352 88 L364 88 L364 96 L390 96 L390 84 L398 84 L398 96 L420 96 L420 90 L432 90 L432 96 L446 96 L446 78 L452 78 L452 96 L480 96 Z"/></g></svg>
+          <div class="t"><div class="ey">Bein HaArbayim</div><div class="h1">The Tamid of the afternoon</div><div class="he" style="font-size:1rem">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</div></div></div>
+        <div class="meta"><span>Your mishmar <b>Yedayah</b></span><span>On duty <b>Imer</b></span></div>
+        <div class="card"><div class="src-he he">תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ</div><div class="src-en">"Let my prayer be set before You as incense."</div><div class="ref">Tehillim 141:2</div>
+          <div class="teach">Bein ha'arbayim. Between the evenings. The light has not gone, but it is going. This is the hour that is hardest to give, because the day has already spent us.</div>
+          <div class="q">What is still yours to give, now, at the end of the day?</div><span class="btn">Offer it</span></div>
+      </div>
+      <div class="tabs"><span class="on"><span class="he">תמיד</span>Tamid</span><span><span class="he">דוכן</span>Duchan</span><span><span class="he">משמר</span>Mishmar</span><span><span class="he">בית מדרש</span>Learn</span><span><span class="he">שאל</span>Ask</span></div>
+    </div></div>
+    <div>
+      <div class="num">Look one</div><h2>Bein HaArbayim</h2>
+      <p>What the prototype wears now. Jerusalem stone in the day, dusk indigo at night, one gold accent, and the sky over the Old City as the living hero. Warm and atmospheric without a single cosmic cliché. The Hebrew is Frank Ruhl Libre, a real siddur face; the English is Cormorant Garamond.</p>
+      <div class="sw"><span><i style="background:#ECE4D4"></i>Stone</span><span><i style="background:#171B3A"></i>Dusk</span><span><i style="background:#A9802A"></i>Gold</span><span><i style="background:#B45A36"></i>Ember</span><span><i style="background:#E8A25E"></i>Sunset</span></div>
+      <div class="kv"><b>Feels like</b><span>Standing on a Jerusalem roof at the hour of Minchah</span><b>Type</b><span>Cormorant Garamond and Frank Ruhl Libre</span><b>Strongest for</b><span>The yearning you described. Emotion first, then text.</span><b>Watch out</b><span>The sky illustration has to stay restrained or it tips toward a wallpaper app.</span></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="look">
+    <div class="phone p2"><div class="scr">
+      <div class="tb"><span>Mishmeret</span><span class="pill">You</span></div>
+      <div class="body">
+        <div class="hero"><div class="t"><div class="ey">Bein HaArbayim · Tuesday</div><div class="h1">The Tamid of the afternoon</div><div class="he" style="font-family:'David Libre',serif;font-size:1.05rem;margin-top:6px">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</div></div></div>
+        <div class="meta"><span>Your mishmar <b>Yedayah</b></span><span>On duty <b>Imer</b></span></div>
+        <div class="card"><div class="src-he he">תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ</div><div class="src-en">"Let my prayer be set before You as incense."</div><div class="ref">Tehillim 141:2</div>
+          <div class="teach">Bein ha'arbayim. Between the evenings. The light has not gone, but it is going. This is the hour that is hardest to give, because the day has already spent us.</div>
+          <div class="q">What is still yours to give, now, at the end of the day?</div><span class="btn">Offer it</span></div>
+      </div>
+      <div class="tabs"><span class="on"><span class="he">תמיד</span>Tamid</span><span><span class="he">דוכן</span>Duchan</span><span><span class="he">משמר</span>Mishmar</span><span><span class="he">בית מדרש</span>Learn</span><span><span class="he">שאל</span>Ask</span></div>
+    </div></div>
+    <div>
+      <div class="num">Look two</div><h2>Jerusalem Stone</h2>
+      <p>No illustration at all. Pale limestone, near-black ink, hairline rules, and one copper accent. It reads like a beautifully set sefer, and it puts the Hebrew source first on every screen. The Hebrew is David Libre, the face of Israeli print; the English is Newsreader, an editorial serif with an italic that carries the questions.</p>
+      <div class="sw"><span><i style="background:#F6F2EA"></i>Limestone</span><span><i style="background:#1E1C19"></i>Ink</span><span><i style="background:#8A5A2B"></i>Copper</span><span><i style="background:#E4DDD0"></i>Rule</span></div>
+      <div class="kv"><b>Feels like</b><span>A printed siddur from a good press, opened on a stone ledge</span><b>Type</b><span>Newsreader and David Libre</span><b>Strongest for</b><span>Learned Kohanim who want text, not mood. Ages well. Prints well.</span><b>Watch out</b><span>Can feel austere to a secular Kohen arriving for the first time.</span></div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="look">
+    <div class="phone p3"><div class="scr">
+      <div class="tb"><span>MISHMERET</span><span class="pill">You</span></div>
+      <div class="body">
+        <div class="hero">
+          <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="60" fill="none" stroke="#D6AE58" stroke-width=".8" opacity=".6"/><g stroke="#D6AE58" stroke-width="1.6" stroke-linecap="round"><line x1="75" y1="9" x2="75" y2="16"/><line x1="108" y1="18" x2="104.5" y2="24"/><line x1="132" y1="42" x2="126" y2="45.5"/><line x1="141" y1="75" x2="134" y2="75"/><line x1="132" y1="108" x2="126" y2="104.5"/><line x1="108" y1="132" x2="104.5" y2="126"/><line x1="75" y1="141" x2="75" y2="134"/><line x1="42" y1="132" x2="45.5" y2="126"/><line x1="18" y1="108" x2="24" y2="104.5"/><line x1="9" y1="75" x2="16" y2="75"/><line x1="18" y1="42" x2="24" y2="45.5"/><line x1="42" y1="18" x2="45.5" y2="24"/></g><line x1="27" y1="123" x2="34" y2="116" stroke="#E27E52" stroke-width="3" stroke-linecap="round"/><circle cx="75" cy="75" r="3" fill="#D6AE58"/></svg>
+          <div class="t"><div class="ey">Bein HaArbayim</div><div class="h1">The Tamid of the afternoon</div></div></div>
+        <div class="meta"><span>Your mishmar <b>Yedayah</b></span><span>On duty <b style="color:#E27E52">Imer</b></span></div>
+        <div class="card"><div class="src-he he" style="color:#F1D89A">תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ</div><div class="src-en">"Let my prayer be set before You as incense."</div><div class="ref">Tehillim 141:2</div>
+          <div class="teach">Bein ha'arbayim. Between the evenings. The light has not gone, but it is going. This is the hour that is hardest to give, because the day has already spent us.</div>
+          <div class="q">What is still yours to give, now, at the end of the day?</div><span class="btn">Offer it</span></div>
+      </div>
+      <div class="tabs"><span class="on"><span class="he">תמיד</span>Tamid</span><span><span class="he">דוכן</span>Duchan</span><span><span class="he">משמר</span>Mishmar</span><span><span class="he">בית מדרש</span>Learn</span><span><span class="he">שאל</span>Ask</span></div>
+    </div></div>
+    <div>
+      <div class="num">Look three</div><h2>Night Watch</h2>
+      <p>Dark first. The Rambam says twenty-four posts kept the Mikdash every night, and this look lives there: near-black indigo, gold lines, the ring of twenty-four marks as the recurring emblem, one ember for the watch on duty. Cinzel gives the wordmark a carved, Roman-inscription weight; the reading text stays in Frank Ruhl Libre and Cormorant.</p>
+      <div class="sw"><span><i style="background:#0F1222"></i>Night</span><span><i style="background:#171B30"></i>Chamber</span><span><i style="background:#D6AE58"></i>Gold</span><span><i style="background:#E27E52"></i>Torch</span><span><i style="background:#EDE5D3"></i>Linen</span></div>
+      <div class="kv"><b>Feels like</b><span>The Beit HaMoked at midnight, torches and keys</span><b>Type</b><span>Cinzel for the mark, Cormorant Garamond and Frank Ruhl Libre for reading</span><b>Strongest for</b><span>The mishmar idea. Feels like belonging to a guard. Striking on a phone.</span><b>Watch out</b><span>Dark by day is tiring for long reading; the light mode would be Look one.</span></div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="look">
+    <div class="phone p4"><div class="scr">
+      <div class="tb"><span>Mishmeret</span><span class="pill">You</span></div>
+      <div class="body">
+        <div class="hero"><div class="t"><div class="ey">Bein HaArbayim</div><div class="h1">The Tamid of the afternoon</div><div class="he" style="font-size:1rem;margin-top:4px;opacity:.9">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</div></div></div>
+        <div class="meta"><span>Your mishmar <b>Yedayah</b></span><span>On duty <b style="color:#8B1E3F">Imer</b></span></div>
+        <div class="card"><div class="src-he he">תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ</div><div class="src-en">"Let my prayer be set before You as incense."</div><div class="ref">Tehillim 141:2</div>
+          <div class="teach">Bein ha'arbayim. Between the evenings. The light has not gone, but it is going. This is the hour that is hardest to give, because the day has already spent us.</div>
+          <div class="q">What is still yours to give, now, at the end of the day?</div><span class="btn">Offer it</span></div>
+      </div>
+      <div class="tabs"><span class="on"><span class="he">תמיד</span>Tamid</span><span><span class="he">דוכן</span>Duchan</span><span><span class="he">משמר</span>Mishmar</span><span><span class="he">בית מדרש</span>Learn</span><span><span class="he">שאל</span>Ask</span></div>
+    </div></div>
+    <div>
+      <div class="num">Look four</div><h2>Techelet</h2>
+      <p>The palette of the priestly garments: techelet blue, argaman and tolaat shani as a single woven stripe, gold thread, and white linen for the ground. The only look with a real color identity beyond gold and stone. Regal but calm, because the blue does the work and the reds appear only in the stripe and the on-duty mark. Noto Serif Hebrew and Cormorant Garamond.</p>
+      <div class="sw"><span><i style="background:#FBFAF6"></i>Linen</span><span><i style="background:#1F3A8A"></i>Techelet</span><span><i style="background:#8B1E3F"></i>Argaman</span><span><i style="background:#C9A24A"></i>Gold thread</span><span><i style="background:#14213D"></i>Ink</span></div>
+      <div class="kv"><b>Feels like</b><span>The hem of the Me'il, the woven belt of the Kohen</span><b>Type</b><span>Cormorant Garamond and Noto Serif Hebrew</span><b>Strongest for</b><span>Identity. A Kohen sees his own garments in it. Distinct from every other Torah app.</span><b>Watch out</b><span>Blue and crimson together can go heraldic fast; keep the reds to the stripe.</span></div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="look">
+    <div class="phone p5"><div class="scr">
+      <div class="tb"><span>Mishmeret</span><span class="pill">You</span></div>
+      <div class="body">
+        <div class="hero"><div class="blob"></div><div class="t"><div class="ey">Bein HaArbayim</div><div class="h1">The Tamid of the afternoon</div><div class="he" style="font-size:1rem;margin-top:4px;opacity:.8">תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם</div></div></div>
+        <div class="meta"><span>Your mishmar <b>Yedayah</b></span><span>On duty <b>Imer</b></span></div>
+        <div class="card"><div class="src-he he">תִּכּוֹן תְּפִלָּתִי קְטֹרֶת לְפָנֶיךָ</div><div class="src-en">"Let my prayer be set before You as incense."</div><div class="ref">Tehillim 141:2</div>
+          <div class="teach">Bein ha'arbayim. Between the evenings. The light has not gone, but it is going. This is the hour that is hardest to give, because the day has already spent us.</div>
+          <div class="q">What is still yours to give, now, at the end of the day?</div><span class="btn">Offer it</span></div>
+      </div>
+      <div class="tabs"><span class="on"><span class="he">תמיד</span>Tamid</span><span><span class="he">דוכן</span>Duchan</span><span><span class="he">משמר</span>Mishmar</span><span><span class="he">בית מדרש</span>Learn</span><span><span class="he">שאל</span>Ask</span></div>
+    </div></div>
+    <div>
+      <div class="num">Look five</div><h2>Dawn</h2>
+      <p>The modern one. Warm white, a soft dawn glow instead of an illustration, rounded cards with a little lift, and clean sans-serif type: Heebo for Hebrew, Manrope for English. One amber accent. It feels like a well-made meditation app, friendly on first open, and it is the easiest to read for a Kohen who has never opened a sefer.</p>
+      <div class="sw"><span><i style="background:#FFFDF9"></i>Warm white</span><span><i style="background:#FFB37A"></i>Dawn</span><span><i style="background:#B8652A"></i>Amber</span><span><i style="background:#2A2622"></i>Ink</span><span><i style="background:#F0E6D8"></i>Edge</span></div>
+      <div class="kv"><b>Feels like</b><span>First light through a kitchen window, coffee still hot</span><b>Type</b><span>Manrope and Heebo</span><b>Strongest for</b><span>Reach. The secular or newly observant Kohen. Lowest barrier.</span><b>Watch out</b><span>Least distinctive. Could be any wellness app if the copy were weaker.</span></div>
+    </div>
+  </section>
+
+  <div class="pick">
+    <h3>How to choose</h3>
+    <p style="margin:0 0 8px">The structure stays the same in all five. What changes is who feels at home on first open. One and three are the most emotional and belong together as day and night. Two is the most learned. Four is the most Kohen. Five is the most welcoming.</p>
+    <p style="margin:0">Pick a number, or a mix, and I will apply it to the app the same day, with the site to match.</p>
+  </div>
+</div>
