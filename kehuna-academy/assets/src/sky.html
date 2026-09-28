@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap"><style>
+html,body{margin:0;width:2400px;height:1350px;overflow:hidden;font-family:"Cormorant Garamond","FreeSerif",serif}
+.stage{position:relative;width:2400px;height:1350px;overflow:hidden}
+.sky{position:absolute;inset:0;background:linear-gradient(180deg,var(--c1) 0%,var(--c2) 45%,var(--c3) 78%,var(--c4) 100%)}
+.evening{--c1:#171B3A;--c2:#4B3B6B;--c3:#A05E74;--c4:#E8A25E}
+.morning{--c1:#5F7DB0;--c2:#9FB0CF;--c3:#D9CBCF;--c4:#F5DDAE}
+.haze{position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(180deg,rgba(255,200,140,0) 0%,rgba(255,190,120,.18) 60%,rgba(255,220,170,.35) 100%)}
+.sun{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,#FFF6DC 0%,#F8D48E 45%,rgba(248,212,142,0) 70%)}
+.evening .sun{top:690px;width:420px;height:420px}
+.morning .sun{top:430px;width:360px;height:360px;opacity:.9}
+.glow{position:absolute;left:50%;transform:translateX(-50%);bottom:250px;width:1800px;height:500px;background:radial-gradient(ellipse at center bottom,rgba(255,180,110,.45) 0%,rgba(255,180,110,0) 70%)}
+svg{position:absolute;left:0;bottom:0;width:2400px;height:auto;display:block}
+.grain{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='.9'/></svg>");mix-blend-mode:multiply}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(20,20,40,.35) 100%)}
+.stars{position:absolute;inset:0}
+.stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.6}
+</style></head><body>
+<div class="stage MODE" id="stage">
+  <div class="sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="glow"></div>
+  <div class="sun"></div>
+  <div class="haze"></div>
+  <svg viewBox="0 0 2400 600" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#2B2D4B" opacity=".45" d="M0 380 L200 330 L420 350 L640 290 L860 320 L1080 250 L1300 300 L1520 270 L1760 310 L2000 260 L2200 300 L2400 280 L2400 600 L0 600 Z"/>
+    <path fill="#1D1F3C" opacity=".75" d="M0 430 L160 410 L300 425 L480 395 L700 420 L900 380 L1100 410 L1350 370 L1600 400 L1850 375 L2100 405 L2400 385 L2400 600 L0 600 Z"/>
+    <g fill="#121428">
+      <path d="M0 470 L120 470 L120 440 L150 440 L150 460 L210 460 L210 420 L235 420 L235 460 L300 460 L300 445 L330 445 L330 470 L420 470 L420 452 L450 452 L450 470 L520 470 L520 405 L540 405 L540 470 L640 470 L640 440 L670 440 L670 470 L760 470 L760 430 L780 430 L780 470 L900 470 L900 455 L940 455 L940 470 L1020 470 L1020 448 L1050 448 L1050 470 L2400 470 L2400 600 L0 600 Z"/>
+      <path d="M1050 470 C1050 395 1120 350 1200 350 C1280 350 1350 395 1350 470 Z"/>
+      <path d="M1192 350 L1200 318 L1208 350 Z"/>
+      <path d="M1350 470 L1350 440 L1400 440 L1400 470 L1450 470 L1450 380 L1470 380 L1470 470 L1560 470 L1560 445 L1600 445 L1600 470 L1700 470 L1700 430 L1725 430 L1725 470 L1820 470 L1820 452 L1860 452 L1860 470 L1940 470 L1940 400 L1958 400 L1958 470 L2060 470 L2060 445 L2090 445 L2090 470 L2200 470 L2200 425 L2220 425 L2220 470 L2400 470 Z"/>
+      <path d="M1000 470 L1000 455 L1040 455 L1040 470 Z"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+</div>
+<script>
+var s=document.getElementById('stars'); if(document.getElementById('stage').classList.contains('evening')){for(var i=0;i<90;i++){var d=document.createElement('i');d.style.left=(Math.random()*2400)+'px';d.style.top=(Math.random()*420)+'px';d.style.opacity=(Math.random()*.5+.15);d.style.width=d.style.height=(Math.random()*2+1.5)+'px';s.appendChild(d);}}
+</script>
+</body></html>
