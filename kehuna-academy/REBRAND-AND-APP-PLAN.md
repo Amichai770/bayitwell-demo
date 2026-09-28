@@ -25,7 +25,7 @@ Alternatives considered:
 - **Tamid** (constant, the daily offering). Beautiful for a daily practice, but heavily used by other organizations.
 - **Kehuna** (drop "Academy"). Continuity, but "Kehuna" alone does not tell a Kohen the door is for him.
 
-Domain availability has not been checked from this session. Check mishmeret.app, mishmeret.org, and mishmeret.com before committing. kehunacademy.com stays as a redirect.
+Domains, checked by DNS on September 28, 2026: mishmeret.app, mishmeret.org, mishmeret.com and mishmeret.co.il all resolve, so they are likely taken. mishmeret.co, mishmeret.io, mishmeretkehuna.com, kehuna.app and kehuna.co show no record and are worth checking at a registrar. The simplest path is to keep kehunacademy.com, which Ami already owns, and run the app at mishmeret.kehunacademy.com.
 
 ## Positioning
 
